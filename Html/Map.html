@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css" integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <div class="sidebar">
+                <div class="logo">
+                    <h1>wn3</h1>
+                </div>
+                <ul class="nav">
+                    <li >
+                        <a href="../Html/Admin.html" class="nav-link">
+                            <i class="fa-solid fa-gauge"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Html/Profile.html" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../Html/Management.html" class="nav-link">
+                            <i class="fa-solid fa-bars-progress"></i>
+                            <p>Management</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../Html/Statisc.html" class="nav-link">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <p>Statistics</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Html/Map.html" class="nav-link" >
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <p>Map</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <header class="header">
+                <div class="expand">
+                    <div class="expand-left">
+                        <p>Map</p>
+                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <a><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+                    </div>
+                    <div class="expand-right">
+                        <a href=""><img src="../img/content/logouser.png" alt=""></a>
+                        <p onclick="logout()">Log out</p>
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                </div>
+            </header>
+            <main class="content-page">
+                <div class="map-container">
+                    <div class="map">     
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6697269378988!2d106.68006961488499!3d10.759917092332762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b7c3ed289%3A0xa06651894598e488!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBTw6BpIEfDsm4!5e0!3m2!1svi!2s!4v1668075434323!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    </div>  
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="end">
+                    Copyright 2022 © Designed by
+                    <a href="" class="end-link">GoodWineShop.com</a>
+                </div>
+                <div title="Về đầu trang" class="top-up">
+                    <i class="icon-top fa-solid fa-angle-up"></i>
+                </div>
+            </footer>
+        </div>
+    </div> 
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script>
+         var offset = 500;
+        var duration = 1;
+        $(function(){
+        $('.right').scroll(function () {
+            if ($(this).scrollTop() > offset) {
+                $('.top-up').fadeIn(duration);
+            }
+            else {
+                $('.top-up').fadeOut(duration);
+            }
+        });
+        $('.top-up').click(function () {
+        $('.right').animate({scrollTop: 0}, duration);
+            });
+        });
+    </script>
+    <script>
+        const chart = document.getElementById('myChart');
+        const data = {
+            labels: ['January', 'February', 'March', 'April','May','June','July','August','September','October','November','December'],
+            datasets: [{
+            label: 'Total revenue for the year',
+            data: [65, 59, 27, 33, 95, 90, 44, 27, 53,73, 81, 44],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(255, 159, 64, 0.6)',
+                'rgba(255, 205, 86, 0.6)',
+                'rgba(75, 192, 192, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(153, 102, 255, 0.6)',
+                'rgba(33, 123, 207, 0.6)',
+                'rgba(27, 185, 154, 0.6)',
+                'rgba(53, 185, 28, 0.6)',
+                'rgba(225, 98, 128, 0.6)',
+                'rgba(198, 12, 128, 0.6)',
+                'rgba(78, 225, 210, 0.6)',
+            ],
+            }]
+        };
+        
+        const mixedCharts = new Chart(chart, {
+            type: 'bar',
+            data: data,
+            options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+            },
+        });
+    </script>
+    <script>
+        const charts = document.getElementById('myCharts');
+        const datas = {
+            labels: [
+                'Today',
+                'This week',
+                'Last week'
+            ],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [35, 40, 25],
+                backgroundColor: [
+                'rgb(27,185,154)',
+                'rgb(61,185,220)',
+                'rgb(210,239,242)',
+                ],
+                hoverBorderWidth: 2,
+                hoverOffset: 2
+            }]
+            };
+
+
+            const mixedChart = new Chart(charts, {
+            type: 'doughnut',
+            data: datas,
+        });
+    </script>
+    <script>
+        function animateNumber(finalNumber, duration = 5000, startNumber = 0, callback) {
+            let currentNumber = startNumber
+            const interval = window.setInterval(updateNumber, 17)
+            function updateNumber() {
+                if (currentNumber >= finalNumber) {
+                clearInterval(interval)
+                } else {
+                let inc = Math.ceil(finalNumber / (duration / 17))
+                if (currentNumber + inc > finalNumber) {
+                    currentNumber = finalNumber
+                    clearInterval(interval)
+                } else {
+                    currentNumber += inc
+                }
+                callback(currentNumber)
+                }
+            }
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+            animateNumber(1587, 1000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter1').innerText = formattedNumber
+            })
+            
+            animateNumber(550000, 1000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter2').innerText = formattedNumber
+            })
+            
+            animateNumber(7000, 1000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter3').innerText = formattedNumber
+            })
+            animateNumber(2354, 1000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter4').innerText = formattedNumber
+            })
+            })
+    </script>
+    <script>
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("admin")
+        }
+    </script>
+</body>
+</html>
+
+
+

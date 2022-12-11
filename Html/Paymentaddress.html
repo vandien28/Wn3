@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/Paymentaddress.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body onload="addcart(), checkuser()">
+    <div id="cart" class="cart"></div>
+    <div id="cart-wrapper">
+        <div class="cart-wrapper">
+            <button id="cart-close" class="cart-close">
+                <i class="close fa-sharp fa-solid fa-xmark"></i>
+            </button>
+            <div class="cart-title">
+                <div class="heading">
+                    <h4 class="title">Cart</h4>
+                    <div class="cart-line"></div>
+                    <p class="cart-text">There are no products in the cart.</p>
+                </div>
+            </div>    
+            <div class="widget style-1" id="widget">
+                
+            </div>
+            <div class="footer-cart">
+                <div  class="provisional">
+                    <p class="provisional-text">
+                        <strong>Provisional:</strong>
+                    <span class="provisional-price">
+                        0&nbsp;
+                    </span> 
+                    <span class="provisional-price-d">$</span>
+                    </p>
+                </div>
+                <p  class="btn-pay-viewcart">
+                    <a href="../Html/Pay.html" class="pay-text">pay</a>
+                    <a href="../Html/Cart.html" class="viewcart-text">view cart</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-wrapper">
+                <div id="header-scrolls" class="header-scrolls">
+                    <div id="scroll" class="scroll">
+                        <div class="flex-left">
+                            <ul class="nav">
+                                <li class="menu-item-s">
+                                    <a href="../Html/Home.html" class="nav-text-a">home Page</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Introduce.html" class="nav-text-b">introduce</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Product.html" class="nav-text-c">product
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="header-inner" >
+                            <div id="sc-logo" class="sc-logo">
+                                <a href="../Html/Home.html">
+                                    <img width="50" height="50" src="..//img/header/logo.png" alt="Wn3" class="scroll-logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-right">
+                            <ul class="navs">
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Blog.html" class="nav-text-a">blog</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Login.html" class="nav-text-b account1" onclick="clickpay()">account
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item">
+                                            <a href="../Html/User.html" class="menu-text user"></a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-text clickpays" onclick="clickpay()">pay</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href=" " class="menu-text logout" onclick="logout()">log out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Contact.html" class="nav-text-c">contact</a>
+                                </li>
+                                <li id="menu-click" class="menu-item-s">
+                                    <div  class="nav-text-c">
+                                        <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                        <span class="cart-price">0</span>
+                                        <span>$</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="top-bar" class="top-bar">
+                    <div class="top-bar-header">
+                        <div class="top-bar-right">
+                            <i class="phone-icon fa-solid fa-square-phone"></i>
+                            <span class="text-top-bar">Hotline: </span>
+                            <a href="tel:(+84) 999 888 999" class="tel-top-bar">(+84) 999 888 999</a>
+                        </div>
+                        <div class="top-bar-left">
+                            <i class="icon-bar-left fa-brands fa-facebook-f"></i>
+                            <i class="icon-bar-left fa-brands fa-instagram"></i>
+                            <i class="icon-bar-left fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-bar-left fa-solid fa-square-envelope"></i></a>
+                        </div>
+                    </div>    
+                </div>
+                <div id="masthead" class="masthead">
+                    <div class="flex-left">
+                        <ul class="nav">
+                            <li class="menu-item">
+                                <a href="../Html/Home.html" class="nav-text-h">home Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Introduce.html" class="nav-text">introduce</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Product.html" class="nav-text-s">product
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                    <li class="menu-item"><a href="Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="header-inner">
+                        <div id="logo" class="logo">
+                            <a href="../Html/Home.html" >
+                                <img width="300" height="100" src="..//img/header/chivas-logo-png-transparent.png" alt="Wn3" class="header-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <ul class="navs">
+                            <li class="menu-item">
+                                <a href="../Html/Blog.html" class="nav-text-h" >blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Login.html" class="nav-text-s account2"  style="color: rgb(46 197 124);" onclick="clickpay()">account
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item">
+                                        <a href="../Html/User.html" class="menu-text users"></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href=" " class="menu-text clickpay" onclick="clickpay()">pay</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Login.html" class="menu-text logouts" onclick="logout()">log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li  class="menu-item">
+                                <a href="../Html/Contact.html" class="nav-text">contact</a>
+                            </li>
+                            <li id="menu-clicks" class="menu-item">
+                                <div id="nav-text" class="nav-text">
+                                    <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                    <span class="cart-prices">0</span> 
+                                    <span>$</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>    
+        </header>
+        <main id="main">
+            <div class="account">
+                <div class="titles">
+                    <h1 class="title-account"> 
+                        My Account
+                    </h1>
+                </div>
+            </div>
+            <div id="dashboard-main">
+                <div id="dashboards-main">
+                    <div id="profile-account">
+                        <div id="profile">
+                            <span class="inline"><img src="../img/content/logouser.png" alt="Wn3" class="personal-picture"></span>
+                            <span class="name-text inline">thanhnm300603</span>
+                            <span class="name-text inline font">#5</span> 
+                        </div>
+                        <div id="sidebar-profile" class="sidebarsv-profile">
+                            <ul class="sidebars-profile">
+                                <li class="sidebars-line"><a href="" class="accbox">Dashboard</a></li>
+                                <li class="sidebars-menu"><a href="" class="accbox">Order</a></li>
+                                <li class="sidebars-menu"><a href="" class="accbox">Address</a></li>
+                                <li class="sidebars-menu"><a href="" class="accbox">Account information</a></li>
+                                <li class="sidebars-menu" style="border: none;"><a href="" class="accbox">Log out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="quick-dashboard">
+                        <div class="titles-payment">
+                            <h3 class="title-payment">Payment address</h3>
+                        </div>
+                        <form class="form-payment" method="post">
+                            <div class="form-row-last">
+                                <div class="last-box">
+                                    <label for="username">
+                                        Last name&nbsp;
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="input-text" name="username" id="username" autocomplete="username">
+                            </div>
+                            <div class="form-row-family">
+                                <div class="family-box">
+                                    <label for="username">
+                                        Family name&nbsp;
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="input-text" name="username" id="username" autocomplete="username">
+                            </div>
+                        </form>
+                        <form class="forms-payment" method="post">
+                            <div class="company-box">
+                                <label for="username">
+                                    Company name
+                                    <span class="required">(custom)</span>
+                                </label>
+                            </div>
+                            <input type="text" class="input-text" name="username" id="username" autocomplete="username">
+                        </form>
+                        <form class="form-country" method="get">
+                            <div class="country-box">
+                                <label for="country">
+                                    Country&nbsp;
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="select-box">
+                                <div class="options-container">
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="austria" name="country">
+                                        <label for="austria">Austria</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="australia" name="country">
+                                        <label for="australia">Australia</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="afghanistan" name="country">
+                                        <label for="afghanistan">Afghanistan</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="american-samoa" name="country">
+                                        <label for="american-samoa">American-samoa</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="angola" name="country">
+                                        <label for="angola">Angola</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="antarctic" name="country">
+                                        <label for="antarctic">Antarctic</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="argentina" name="country">
+                                        <label for="argentina">Argentina</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="belgium" name="country">
+                                        <label for="belgium">Belgium</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="bangladesh" name="country">
+                                        <label for="bangladesh">Bangladesh</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="bermuda" name="country">
+                                        <label for="bermuda">Bermuda</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="brazil" name="country">
+                                        <label for="brazil">Brazil</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="brunei" name="country">
+                                        <label for="brunei">Brunei</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="campuchia" name="country">
+                                        <label for="campuchia">Campuchia</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="canada" name="country">
+                                        <label for="canada">Canada</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="chile" name="country">
+                                        <label for="chile">Chile</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="czech-republic" name="country">
+                                        <label for="czech-republic">Czech Republic</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="colombia" name="country">
+                                        <label for="colombia">Colombia</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="cuba" name="country">
+                                        <label for="cuba">Cuba</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="china" name="country">
+                                        <label for="china">China</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="denmark" name="country">
+                                        <label for="denmark">Denmark</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="ecuador" name="country">
+                                        <label for="ecuador">Ecuador</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="egypt" name="country">
+                                        <label for="egypt">Egypt</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="france" name="country">
+                                        <label for="france">France</label>
+                                    </div> 
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="germany" name="country">
+                                        <label for="germany">Germany</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="greek" name="country">
+                                        <label for="greek">Greek</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="hongkong" name="country">
+                                        <label for="hongkong">Hong Kong</label>
+                                    </div> 
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="italy" name="country">
+                                        <label for="italy">Italy</label>
+                                    </div>                                                                    
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="uk" name="country">
+                                        <label for="uk">UK</label>
+                                    </div>                                                                            
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="portugal" name="country">
+                                        <label for="portugal">Portugal</label>
+                                    </div>                                 
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="taiwan" name="country">
+                                        <label for="taiwan">Taiwan</label>
+                                    </div>                                                             
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="netherlands" name="country">
+                                        <label for="netherlands">Netherlands</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="korea" name="country">
+                                        <label for="korea">Korea</label>
+                                    </div>                                                                            
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="iran" name="country">
+                                        <label for="iran">Iran</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="iraq" name="country">
+                                        <label for="iraq">Iraq</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="laos" name="country">
+                                        <label for="laos">Laos</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="us" name="country">
+                                        <label for="us">US</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="macao" name="country">
+                                        <label for="macao">Macao</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="madagascar" name="country">
+                                        <label for="madagascar">Madagascar</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="malaysia" name="country">
+                                        <label for="malaysia">Malaysia</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="mexico" name="country">
+                                        <label for="mexico">Mexico</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="new-zealand" name="country">
+                                        <label for="new-zealand">New Zealand</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="japan" name="country">
+                                        <label for="japan">Japan</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="pakistan" name="country">
+                                        <label for="pakistan">Pakistan</label>
+                                    </div>                                     
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="philippines" name="country">
+                                        <label for="philippines">Philippines</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="singapore" name="country">
+                                        <label for="singapore">Singapore</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="spain" name="country">
+                                        <label for="spain">Spain</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="thailand" name="country">
+                                        <label for="thailand">Thailand</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="switzerland" name="country">
+                                        <label for="switzerland">Switzerland</label>
+                                    </div>                                       
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="ukraine" name="country">
+                                        <label for="ukraine">Ukraine</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="viet-nam" name="country">
+                                        <label for="viet-nam">Viet Nam</label>
+                                    </div>
+                                    <div class="options">
+                                        <input type="radio" class="radio" id="india" name="country">
+                                        <label for="india">India</label>
+                                    </div>
+                                </div>
+                                <div class="selected">
+                                    Choose your region
+                                </div>
+                                <div class="search-box">
+                                    <input type="search"/>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-address" method="post">
+                            <div class="form-row-address">
+                                <div class="address-box">
+                                    <label for="address">
+                                        Address&nbsp;
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="input-text" name="address" id="address-post" autocomplete="address" placeholder="Address">
+                            </div>
+                            <div class="form-row-addresses">   
+                                <div class="address-box">
+                                    <label for="address">
+                                        &nbsp;                                     
+                                    </label>
+                                </div>                              
+                                <input type="text" class="input-text" name="address" id="address-post" autocomplete="address" placeholder="Home address, Apartment, Building,... (custom)">
+                            </div>
+                        </form>
+                        <form class="form-city" method="post">
+                            <div class="form-row-city">
+                                <div class="city-box">
+                                    <label for="city">
+                                        Province / City&nbsp;
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="text" class="input-text" name="city" id="city-post" autocomplete="city">
+                            </div>
+                        </form>
+                        <form class="form-zip" method="post">
+                            <div class="form-row-zip">
+                                <div class="zip-box">
+                                    <label for="zip">
+                                        ZIP code&nbsp;
+                                        <span class="required">(custom)</span>
+                                    </label>
+                                </div>
+                                <input type="number" class="input-text" name="zip-code" id="zip-post" autocomplete="zip-code">
+                            </div>
+                        </form>
+                        <form class="form-tel" method="post">
+                            <div class="form-row-tel">
+                                <div class="tel-box">
+                                    <label for="phone">
+                                        Telephone number&nbsp;
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="tel" class="input-text" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                            </div>
+                        </form>
+                        <form class="form-email" method="post">
+                            <div class="form-row-email">
+                                <div class="email-box">
+                                    <label for="email">
+                                        Email address&nbsp;
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input type="email" class="input-text" name="email" id="email" />
+                            </div>
+                        </form>
+                        <div id="save-address-box">
+                            <div class="savex-address-box">
+                                <a href="" class="saves-address-box">save address</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer">
+                <section class="ft-st">
+                    <div class="ft">
+                        <div class="ft-logo">
+                            <div class="ft-st-logo">
+                                <img src="../img/footer/logo-wine.png" alt="" class="logo-img">
+                            </div>
+                            <div class="ft-icon">
+                                <i class="icon-fb fa-brands fa-facebook-f"></i>
+                                <i class="icon-twt fa-brands fa-twitter"></i>
+                                <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                                <i class="icon-prt fa-brands fa-pinterest"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="ft-nd">
+                    <div class="ft-border">
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Our Stores</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">New York</a></li>
+                                        <li class="col-text"><a href="" class="text-link">London SF</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Cockfosters BP</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Los Angeles</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Chicago</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Las Vegas</a></li>
+                                    </ul>
+                                </div>
+                            </ul>    
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Information</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">About Store</a></li>
+                                        <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Useful links</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">Privacy Policy</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Returns</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Terms & Conditions</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Footer Menu</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href=""class="text-link">Instagram profile</a></li>
+                                        <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box-b">
+                            <div class="menu-wrapper">
+                                <span class="wrapper-title">About The Store</span>
+                            </div>
+                            <div class="menu-lines"></div>
+                            <p>
+                                <span class="p-text">STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</span>
+                            </p>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="location-text"><i class="col-icon fa-solid fa-location-dot"></i><a href=""class="text-link">273 An Duong Vuong, Ward 3, District 5, Ho Chi Minh City</a></li>
+                                    <li class="col-text"><i class="col-icon fa-solid fa-mobile-screen-button"></i><a href="tel:(+84) 999 888 999" class="text-link">Phone: (+84) 999 888 999 </a></li>
+                                </ul>
+                            </div>
+                            <div class="col-img">
+                                <img src="../img/footer/payments.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="ft-rd">
+                    <div class="end">
+                        Copyright 2022 © Designed by
+                        <a href="" class="end-link">GoodWineShop.com</a>
+                    </div>
+                </div>
+                <div title="Về đầu trang" class="top-up">
+                    <i class="icon-top fa-solid fa-angle-up"></i>
+                </div>
+            </div>
+            
+        </footer>
+    </div>   
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script type="text/javascript" src="../js/Wn3.js"></script>
+    <script>
+        let userLogins = !!localStorage.getItem("user")
+        function clickpay() {
+            var clickpay1 = document.querySelector(".clickpay")
+            var clickpay2 = document.querySelector(".clickpays")
+            var acc1 = document.querySelector(".account1")
+            var acc2 = document.querySelector(".account2")
+            if(userLogins) {
+                clickpay1.href = "../Html/Pay.html"
+                clickpay2.href = "../Html/Pay.html"
+                acc1.href = "../Html/User.html"
+                acc2.href = "../Html/User.html"
+
+            } else {
+                clickpay1.href = "../Html/Login.html"
+                clickpay2.href = "../Html/Login.html"
+                acc1.href = "../Html/Login.html"
+                acc2.href = "../Html/Login.html"
+            }
+        }
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("user")
+        }
+        function checkuser() {
+            var checkuser = localStorage.getItem("user") ;
+            if(userLogins) {
+                document.querySelector(".logout").style.display = "block"
+                document.querySelector(".logouts").style.display = "block"
+                document.querySelector(".user").style.display = "block"
+                document.querySelector(".users").style.display = "block"
+                var cuser = document.querySelector(".user").innerText = checkuser
+                var cuser = document.querySelector(".users").innerText = checkuser
+            } else {
+                document.querySelector(".logout").style.display = "none"
+                document.querySelector(".logouts").style.display = "none"
+                document.querySelector(".user").style.display = "none"
+                document.querySelector(".users").style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css" integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../css/Management.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body>
+    <div class="notification hide">
+        <div class="ntfc-box">
+            <div class="noti-box">
+                <div class="noti-title">
+                    <p>Remove product?</p>
+                </div>
+               <div class="noti-btn">
+                    <p class="btn-no">no</p>
+                    <p class="btn-yes">yes</p>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div class="notifications hide">
+        <div class="ntfc-boxs">
+            <div class="noti-btns">
+                <i class="btn-ok fa-solid fa-xmark"></i>
+               </div>
+            <div class="noti-boxs">
+                <div class="noti-titles">
+                    <p>You have not entered product information!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <div class="left">
+            <div class="sidebar">
+                <div class="logo">
+                    <h1>wn3</h1>
+                </div>
+                <ul class="nav">
+                    <li >
+                        <a href="../Html/Admin.html" class="nav-link">
+                            <i class="fa-solid fa-gauge"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Html/Profile.html" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Html/Management.html" class="nav-link">
+                            <i class="fa-solid fa-bars-progress"></i>
+                            <p>Management</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../Html/Statisc.html" class="nav-link">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <p>Statistics</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../Html/Map.html" class="nav-link" >
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <p>Map</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <header class="header" id="header">
+                <div class="expand">
+                    <div class="expand-left">
+                        <p>Management</p>
+                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <a><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+                    </div>
+                    <div class="expand-right">
+                        <a href=""><img src="../img/content/logouser.png" alt=""></a>
+                        <p onclick="logout()">Log out</p>
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                </div>
+            </header>
+            <main class="content-page">
+                <div class="content">
+                    <div class="row-lg">
+                        <div class="col-lg">
+                            <a href="#management-product">
+                                <div class="card-box">
+                                    <h4>Products Management</h6>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg">
+                            <a href="#management-user">
+                                <div class="card-box">
+                                    <h4>Users Management</h6>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg">
+                            <a href="#management-order">
+                                <div class="card-box">
+                                    <h4>Orders Management</h6>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 30px;" id="management-product">
+                        <div class="col" >
+                            <div class="management-box" >
+                                <h4>Products Management</h4>
+                                <div class="management-sidebar">
+                                    <p style="width: calc(100%/5);">Image</p>
+                                    <p style="width: calc(100%/5);">Name</p>
+                                    <p style="width: calc(100%/5);">Quantity</p>
+                                    <p style="width: calc(100%/5);">Price</p>
+                                    <p class="tool" style="width: calc(100%/5);">Tools</p>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-nowrap mb-0">
+                                        <tbody class="tableproduct">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="management-btn">
+                                    <button class="add"><i class="fa-solid fa-plus" style="margin-right: 7px;"></i></button>
+                                </div>
+                            </div>
+                            <div class="management-edit hide">
+                                <h4>Edit Product</h4>
+                                <div class="info-product">
+                                    <div class="upload">
+                                        <p class="entername">Name</p>
+                                        <input type="text" class="inputname  editname" >
+                                    </div>
+                                    <div class="upload"  style="padding-bottom: 15px;">
+                                        <p class="entername">Category</p>
+                                        <div class="select-box">
+                                            <div class="abc">
+                                                <div class="xyz">
+                                                    <input type="radio" class="radio" id="chivas13-25" name="category">
+                                                    <label for="chivas13-25">Chivas 13 & Chivas 25</label>
+                                                </div>
+                                                <div class="xyz">
+                                                    <input type="radio" class="radio" id="chivas18-xv" name="category">
+                                                    <label for="chivas18-xv">Chivas 18 & Chivas XV</label>
+                                                </div>
+                                                <div class="xyz">
+                                                    <input type="radio" class="radio" id="chivasultis-icon" name="category">
+                                                    <label for="chivasultis-icon">Chivas Ultis & Chivas Icon</label>
+                                                </div>
+                                                <div class="xyz">
+                                                    <input type="radio" class="radio" id="chivas12-mizu" name="category">
+                                                    <label for="chivas12-mizu">Chivas 12 & Chivas Mizunara</label>
+                                                </div>
+                                            </div>
+                                            <div class="editselected">
+                                                Choose your category
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Quantity</p>
+                                        <input type="text" class="inputname editquantity" >
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Price</p>
+                                        <input type="text" class="inputname editprices" >
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Introduce</p>
+                                        <textarea name="comment" cols="45" rows="8" required="" class="editintroduce"></textarea >
+                                    </div>
+                                    <div class="upload"> 
+                                        <p class="entername">Image</p>
+                                        <div class="uploadimgs">
+                                            <div class="uploadimgss">
+                                                <img src=" " id="img-previews" class="editimg img">
+                                            </div>
+                                            <div>
+                                                <button class="editpro" style="margin-bottom: 5px;" onclick="editimg()">
+                                                    <label for="file-inputs" class="upimgss">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                        <img src="" id="img-previewss" class="editimgs imgs" style="display: none;">
+                                                    </label>
+                                                    <input accept="image/*" type="file" id="file-inputs" class="file-inputs"/>
+                                                </button>
+                                                <button class="removepro" onclick="removeimg()">
+                                                    <i class="fa-solid fa-xmark" style="padding-top: 5px;"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="btn-management" style="margin-top: 20px;">
+                                    <a href="#header">
+                                        <button type="submit" class="save" style="margin-right:15px;"><i class="fa-solid fa-floppy-disk"></i>
+                                        </button>
+                                    </a>
+                                    <a href="#header">
+                                        <button type="submit" class="close"><i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="management-add hide">
+                                <h4>Add Product</h4>
+                                <div class="info-product">
+                                    <div class="upload">
+                                        <p class="entername">Name</p>
+                                        <input type="text" class="inputname name" >
+                                    </div>
+                                    <div class="upload"  style="padding-bottom: 15px;">
+                                        <p class="entername">Category</p>
+                                        <div class="select-box">
+                                            <div class="option ">
+                                                <div class="options">
+                                                    <input type="radio" class="radio" id="chivas13-25" name="category">
+                                                    <label for="chivas13-25">Chivas 13 & Chivas 25</label>
+                                                </div>
+                                                <div class="options">
+                                                    <input type="radio" class="radio" id="chivas18-xv" name="category">
+                                                    <label for="chivas18-xv">Chivas 18 & Chivas XV</label>
+                                                </div>
+                                                <div class="options">
+                                                    <input type="radio" class="radio" id="chivasultis-icon" name="category">
+                                                    <label for="chivasultis-icon">Chivas Ultis & Chivas Icon</label>
+                                                </div>
+                                                <div class="options">
+                                                    <input type="radio" class="radio" id="chivas12-mizu" name="category">
+                                                    <label for="chivas12-mizu">Chivas 12 & Chivas Mizunara</label>
+                                                </div>
+                                            </div>
+                                            <div class="selected">
+                                                Choose your category
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Quantity</p>
+                                        <input type="text" class="inputname quantity" >
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Price</p>
+                                        <input type="text" class="inputname price" >
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Introduce</p>
+                                        <textarea name="comment" cols="45" rows="8" required="" class="introduce"></textarea >
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Image</p>
+                                        <div class="uploadimg">
+                                            <label for="file-input" class="upimgs">
+                                                <i class="icon-camera fa-solid fa-camera" id="icon-camera"></i>
+                                                <img src=" " id="img-preview">
+                                            </label>
+                                            <input accept="image/*" type="file" id="file-input" />
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="btn-management" style="margin-top: 20px;">
+                                    <a href="#header">
+                                        <button type="submit" class="btn-add" style="margin-right:15px;"><i class="fa-solid fa-floppy-disk"></i>
+                                        </button>
+                                    </a>
+                                    <a href="#header">
+                                        <button type="submit" class="closes"><i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 70px;" id="management-user">
+                        <div class="col" >
+                        <div class="management-box" >
+                            <h4>Users Management</h4>
+                            <div class="management-sidebar">
+                                <p style="width: calc(100%/6.387);">Account name</p>
+                                <p style="width: calc(100%/6.387);">Password</p>
+                                <p style="width: calc(100%/6.387);">Name</p>
+                                <p style="width: calc(100%/6.387);">Email</p>
+                                <p style="width: calc(100%/6.387);">Gender</p>
+                                <p style="width: calc(100%/6.387);">Address</p>
+                                <!-- <p class="tool" style="width: calc(100%/7);">Lock</p> -->
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-nowrap mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width: calc(100%/6.3);"><span>user1</span></th>
+                                            <td style="width: calc(100%/6.3);"><span>123456789aZ</span></td>
+                                            <td style="width: calc(100%/6.3);"><span>Nguyễn Văn A</span></td>
+                                            <td style="width: calc(100%/6.3);"><span>user1@gmail.com</span></td>
+                                            <td style="width: calc(100%/6.3);"><span>Male</span></td>
+                                            <td style="width: calc(100%/6.3);"><span>TPHCM</span></td>
+                                            <td  >
+                                               
+                                                <input type="checkbox" id="checkbox1" name="checkbox1" class="checkbox">
+                                                <label class="checkboxs" for="checkbox1"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user2</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Nguyễn Văn B</span></td>
+                                            <td><span>user2@gmail.com</span></td>
+                                            <td><span>Male</span></td>
+                                            <td><span>Bình Dương</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox2" name="checkbox2" class="checkbox">
+                                                <label class="checkboxs" for="checkbox2"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user3</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Lê Thị Thu C</span></td>
+                                            <td><span>user3@gmail.com</span></td>
+                                            <td><span>Female</span></td>
+                                            <td><span>Đồng Nai</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox3" name="checkbox3" class="checkbox">
+                                                <label class="checkboxs" for="checkbox3"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user4</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Đinh Thị Thanh D</span></td>
+                                            <td><span>user4@gmail.com</span></td>
+                                            <td><span>Female</span></td>
+                                            <td><span>Vũng Tàu</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox4" name="checkbox4" class="checkbox">
+                                                <label class="checkboxs" for="checkbox4"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user5</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Lê Văn E</span></td>
+                                            <td><span>user5@gmail.com</span></td>
+                                            <td><span>Male</span></td>
+                                            <td><span>Bến Tre</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox5" name="checkbox5" class="checkbox">
+                                                <label class="checkboxs" for="checkbox5"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user6</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Phạm Thị F</span></td>
+                                            <td><span>user6@gmail.com</span></td>
+                                            <td><span>Female</span></td>
+                                            <td><span>Cà Mau</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox6" name="checkbox6" class="checkbox">
+                                                <label class="checkboxs" for="checkbox6"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user7</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Đinh Văn G</span></td>
+                                            <td><span>user7@gmail.com</span></td>
+                                            <td><span>Male</span></td>
+                                            <td><span>Bình Phước</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox7" name="checkbox7" class="checkbox">
+                                                <label class="checkboxs" for="checkbox7"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user8</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Phạm Văn H</span></td>
+                                            <td><span>user8@gmail.com</span></td>
+                                            <td><span>Male</span></td>
+                                            <td><span>Bình Định</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox8" name="checkbox8" class="checkbox">
+                                                <label class="checkboxs" for="checkbox8"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user9</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Đặng Mỹ I</span></td>
+                                            <td><span>user9@gmail.com</span></td>
+                                            <td><span>Female</span></td>
+                                            <td><span>Phú Yên</span></td>
+                                            <td >
+                                               
+                                                <input type="checkbox" id="checkbox9" name="checkbox9" class="checkbox">
+                                                <label class="checkboxs" for="checkbox9"></label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><span>user10</span></th>
+                                            <td><span>123456789aZ</span></td>
+                                            <td><span>Huỳnh Văn K</span></td>
+                                            <td><span>user10@gmail.com</span></td>
+                                            <td><span>Male</span></td>
+                                            <td><span>Quảng Ngãi</span></td>
+                                            <td >
+                                                
+                                                <input type="checkbox" id="checkbox10" name="checkbox10" class="checkbox">
+                                                <label class="checkboxs" for="checkbox10"></label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                            
+                            <div class="management-btns">
+                                <button class="unlock" ><i class="fa-solid fa-unlock"></i></button>
+                                <button class="lock"><i class="fa-solid fa-lock"></i></button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding: 70px 0 30px;" id="management-order">
+                        <div class="col">
+                            <div class="management-box management-order">
+                                <h4>Orders Management</h4>
+                                <div class="management-sidebar">
+                                    <p style="width: calc(100%/7);">ID</p>
+                                    <p style="width: calc(100%/7);">Custome</p>
+                                    <p style="width: calc(100%/7);">Status</p>
+                                    <p style="width: calc(100%/7);">Pay</p>
+                                    <p style="width: calc(100%/7);">Date Created</p>
+                                    <p style="width: calc(100%/7);">Total</p>
+                                    <p class="tool" style="width: calc(100%/7);">Details</p>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-nowrap mb-0">
+                                        <tbody class="tableorder">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="width:100%; height: 30px;"></div>
+                            </div>
+                            <div class="management-details hide">
+                                <h4>Order details</h4>
+                                <div class="info-product">
+                                    <div class="upload">
+                                        <p class="entername">ID&nbsp;:&nbsp;&nbsp;&nbsp;<span class="ids"></span></p>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Custome&nbsp;:&nbsp;&nbsp;&nbsp;<span class="customers"></span></p>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Status&nbsp;:&nbsp;&nbsp;&nbsp;<span class="stt"></span></p>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Pay&nbsp;:&nbsp;&nbsp;&nbsp;<span class="pays"></span></p>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Date Created&nbsp;:&nbsp;&nbsp;&nbsp;<span class="dates"></span></p>
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Products</p>
+                                        <ul class="product">
+                                            <li>
+                                                <img src="../img/content/chivas18lisa-1.png" alt="">
+                                                <div>
+                                                    <p>Chivas 18 Lisa Limited</p>
+                                                    <span>12.390&nbsp;$&nbsp;<i class="fa-solid fa-xmark"></i>&nbsp;2</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="../img/content/Mizunara-1.png" alt="">
+                                                <div>
+                                                    <p>Chivas Mizunara</p>
+                                                    <span>1.579&nbsp;$&nbsp;<i class="fa-solid fa-xmark"></i>&nbsp;5</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <img src="../img/content/balmaingold-1.png" alt="">
+                                                <div>
+                                                    <p>Chivas XV Balmain Gold </p>
+                                                    <span>15.000&nbsp;$&nbsp;<i class="fa-solid fa-xmark"></i>&nbsp;2</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    
+                                    </div>
+                                    <div class="upload">
+                                        <p class="entername">Total&nbsp;:&nbsp;&nbsp;&nbsp;<span class="totals">&nbsp;$</span></p>
+                                    </div>
+                                </div>
+                                <div class="btn-management" style="margin-top: 20px;">
+                                    <a href="#management-order">
+                                        <button type="submit" class="closedetail"><i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="end">
+                    Copyright 2022 © Designed by
+                    <a href="" class="end-link">GoodWineShop.com</a>
+                </div>
+                <div title="Về đầu trang" class="top-up">
+                    <i class="icon-top fa-solid fa-angle-up"></i>
+                </div>
+            </footer>
+        </div>
+    </div> 
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script>
+        var offset = 500;
+        var duration = 1;
+        $(function(){
+        $('.right').scroll(function () {
+            if ($(this).scrollTop() > offset) {
+                $('.top-up').fadeIn(duration);
+            }
+            else {
+                $('.top-up').fadeOut(duration);
+            }
+        });
+        $('.top-up').click(function () {
+        $('.right').animate({scrollTop: 0}, duration);
+            });
+        });
+
+
+    var chivas = [{ 
+        id: 1,
+        name: 'Chivas Mizunara',
+        price: 1579,
+        img: '../img/content/Mizunara.png',
+        link:'../Html/Mizunara.html',
+        category: 'Chivas 12 & Chivas Mizunara',
+        quantity: 100
+    
+    },
+    { 
+        id: 2,
+        name: 'Chivas Icon',
+        price: 2870,
+        img: '../img/content/icon.png',
+        link:'../Html/Icon.html',
+        category: 'Chivas Ultis & Chivas Icon',
+        quantity: 100
+    
+    },
+    { 
+        id: 3,
+        name: 'Chivas Ultis',
+        price: 8879,
+        img: '../img/content/ultis.png',
+        link:'../Html/Ultis.html',
+        category: 'Chivas Ultis & Chivas Icon',
+        quantity: 100
+    
+    },
+    { 
+        id: 4,
+        name: 'Chivas 18',
+        price: 5690,
+        img: '../img/content/chivas18.png',
+        link:'../Html/Chivas18.html',
+        category: 'Chivas 18 & Chivas XV',
+        quantity: 100
+    
+    },
+    { 
+        id: 5,
+        name: 'Chivas 18 Lisa Limited',
+        price: 12390,
+        img: '../img/content/chivas18lisa.png',
+        link:'../Html/Lisa.html',
+        category: 'Chivas 18 & Chivas XV',
+        quantity: 100
+    
+    },
+    { 
+        id: 6,
+        name: 'Chivas XV',
+        price: 10579,
+        img: '../img/content/chivasxv.png',
+        link:'../Html/ChivasXV.html',
+        category: 'Chivas 18 & Chivas XV',
+        quantity: 100
+    
+    },
+    { 
+        id: 7,
+        name: 'Chivas XV Balmain',
+        price: 12300,
+        img: '../img/content/balmain.png',
+        link:'../Html/Balmain.html',
+        category: 'Chivas 18 & Chivas XV',
+        quantity: 100
+    
+    },
+    { 
+        id: 8,
+        name: 'Chivas XV Balmain Gold',
+        price: 15000,
+        img: '../img/content/balmaingold.png',
+        link:'../Html/Balmaingold.html',
+        category: 'Chivas 18 & Chivas XV',
+        quantity: 100
+    
+    },
+    { 
+        id: 9,
+        name: 'Chivas 12',
+        price: 3333,
+        img: '../img/content/chivas12.png',
+        link:'../Html/Chivas12.html',
+        category: 'Chivas 12 & Chivas Mizunara',
+        quantity: 100
+    
+    },
+    { 
+        id: 10,
+        name: 'Chivas Ultis XX',
+        price: 6610,
+        img: '../img/content/ultisxx.png',
+        link:'../Html/Ultisxx.html',
+        category: 'Chivas Ultis & Chivas Icon',
+        quantity: 100
+    
+    },
+    { 
+        id: 11,
+        name: 'Chivas 25',
+        price: 7790,
+        img: '../img/content/chivas25.png',
+        link:'../Html/Chivas25.html',
+        category: 'Chivas 13 & Chivas 25',
+        quantity: 100
+    
+    },
+    { 
+        id: 12,
+        name: 'Chivas 13 Tequila Casks',
+        price: 4180,
+        img: '../img/content/tequila.png',
+        link:'../Html/Tequila.html',
+        category: 'Chivas 13 & Chivas 25',
+        quantity: 100
+        
+    
+    },
+    { 
+        id: 13,
+        name: 'Chivas 13 Bourbon Casks',
+        price: 2250,
+        img: '../img/content/chivastim.png',
+        link:'../Html/Bourbon.html',
+        category: 'Chivas 13 & Chivas 25',
+        quantity: 100
+    
+    },
+    { 
+        id: 14,
+        name: 'Chivas 13 Rum Casks',
+        price: 3800,
+        img: '../img/content/chivasđen.png',
+        link:'../Html/Rum.html',
+        category: 'Chivas 13 & Chivas 25',
+        quantity: 100
+    
+    },
+    { 
+        id: 15,
+        name: 'Chivas 13 Rye Casks',
+        price: 6340,
+        img: '../img/content/chivasxanhd.png',
+        link:'../Html/Rye.html',
+        category: 'Chivas 13 & Chivas 25',
+        quantity: 100
+    
+    },
+    { 
+        id: 16,
+        name: 'Chivas 13 Sherry Casks',
+        price: 2235,
+        img: '../img/content/chivasdo.png',
+        link:'../Html/Sherry.html',
+        category: 'Chivas 13 & Chivas 25',
+        quantity: 100
+    
+    }]
+        var Tableproduct = document.querySelector(".tableproduct")
+        chivas.forEach(element => {
+            var newTable = document.createElement('tr')
+            newTable.innerHTML = `
+            <th class="chivasimg" style="width: calc(100%/4.932);"><img src="${element.img}" alt=""></th>
+            <td class="chivasname" style="width: calc(100%/4.932);"><span>${element.name}</span></td>
+            <td class="chivasquantity" style="width: calc(100%/4.932);"><span>${element.quantity}</span></td>
+            <td  style="width: calc(100%/4.932);"><span class="chivasprice">${element.price.toLocaleString('de-DE')}</span><span>&nbsp;$</span></td>
+            <td class="categories hide" style="width: calc(100%/4.932);"><span>${element.category}</span></td>
+            <td style="width: calc(100%/4.932);">
+                <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="remove"><i class="fa-solid fa-xmark"></i></button>
+            </td>`
+            Tableproduct.appendChild(newTable)
+        });
+    var order = [{
+        id:'#11843',
+        customer:'user1',
+        status: 'New',
+        pay: 'Unpaid',
+        date:'4/12/2022',
+        total:35000
+    },{
+        id:'#7745',
+        customer:'user5',
+        status: 'New',
+        pay: 'Unpaid',
+        date:'4/10/2022',
+        total:5000
+    },{
+        id:'#33822',
+        customer:'user2',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'12/5/2022',
+        total:7500
+    },{
+        id:'#96422',
+        customer:'user3',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'17/2/2022',
+        total:2700
+    },{
+        id:'#33671',
+        customer:'user4',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'8/1/2022',
+        total:3500
+    },{
+        id:'#16694',
+        customer:'user1',
+        status: 'Cancel',
+        pay: 'Unpaid',
+        date:'22/12/2021',
+        total:5000
+    },{
+        id:'#22854',
+        customer:'user5',
+        status: 'Cancel',
+        pay: 'Unpaid',
+        date:'12/12/2021',
+        total:15000
+    },{
+        id:'#7765',
+        customer:'user2',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'12/7/2021',
+        total:25000
+    },{
+        id:'#45231',
+        customer:'user4',
+        status: 'Cancel',
+        pay: 'Unpaid',
+        date:'8/3/2020',
+        total:12000
+    },{
+        id:'#12367',
+        customer:'user3',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'4/3/2018',
+        total:35000
+    }
+    ,{
+        id:'#34228',
+        customer:'user5',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'12/1/2017',
+        total:9000
+    },{
+        id:'#33985',
+        customer:'user2',
+        status: 'Cancel',
+        pay: 'Unpaid',
+        date:'10/11/2015',
+        total:6000
+    },{
+        id:'#55864',
+        customer:'user1',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'5/3/2010',
+        total:4000
+    },{
+        id:'#88653',
+        customer:'user4',
+        status: 'Complete',
+        pay: 'Paid',
+        date:'12/12/2007',
+        total:35000
+    },{
+        id:'#13235',
+        customer:'user2',
+        status: 'Cancel',
+        pay: 'Unpaid',
+        date:'4/12/2000',
+        total:7000
+    }]
+    var Tableorder = document.querySelector(".tableorder")
+        order.forEach(element => {
+            var newTables = document.createElement('tr')
+            newTables.innerHTML = `
+            <td id="id" style="width: calc(100%/6.907); height: 50px; color:rgb(0 0 0/40%);">${element.id}</td>
+            <td id="customer" style="width: calc(100%/6.907); height: 50px;">${element.customer}</td>
+            <td id="status" style="width: calc(100%/6.907); height: 50px;" class="orderinfo">${element.status}</td>
+            <td id="pay" style="width: calc(100%/6.907); height: 50px;" class="orderinfo">${element.pay}</td>
+            <td id="date" style="width: calc(100%/6.907); height: 50px;">${element.date}</td>
+            <td id="total" style="width: calc(100%/6.907); height: 50px;">${element.total.toLocaleString('de-DE')}&nbsp;$</td>
+            <td style="width: calc(100%/6.907); height: 50px;">
+                <button class="detail"><i class="fa-solid fa-circle-info"></i></button>
+            </td>
+            `
+            Tableorder.appendChild(newTables)
+           
+        });
+        var odif = document.querySelectorAll(".orderinfo")
+        for(let i = 0;i<odif.length;i++) {
+            if(odif[i].innerText === 'Complete') {
+                odif[i].classList.add('complete')
+            } if(odif[i].innerText === 'Cancel') {
+                odif[i].classList.add('cancel')
+            } if(odif[i].innerText === 'Unpaid') {
+                odif[i].classList.add('unpaid')
+            } if(odif[i].innerText === 'Paid') {
+                odif[i].classList.add('paid')
+            }
+        }
+
+        const editpro = document.querySelectorAll(".edit")
+            editpro.forEach(function(e,index) {
+                e.addEventListener("click",function(event){{
+                    clearimg = document.querySelector(".img")
+                    clearimg.classList.remove("hide")
+                document.querySelector(".management-edit").classList.remove('hide')
+                document.querySelector(".management-box").classList.add('hide')
+                    var edit1 = event.target
+                    var edit2 = edit1.parentElement.parentElement.parentElement
+                    var editname = edit2.querySelector(".chivasname").innerText
+                    var editimg = edit2.querySelector("img").src
+                    var editprice = edit2.querySelector(".chivasprice").innerText
+                    var editquantity = edit2.querySelector(".chivasquantity").innerText
+                    var editcate = edit2.querySelector(".categories").innerText
+                    var name = document.querySelector(".editname").value = editname
+                    var quantity = document.querySelector(".editquantity").value = editquantity
+                    var price = document.querySelector(".editprices").value = editprice
+                    var img = document.querySelector(".editimg").src = editimg
+                    if(img == "http://127.0.0.1:5500/Html/Management.html") {
+                        clearimg = document.querySelector(".img")
+                        clearimg.classList.add("hide")
+                    }
+                    var cate = document.querySelector(".editselected").innerText = editcate
+                    var introduce = document.querySelector(".editintroduce").innerText = "The world's first Chivas Mizunara is selectively aged in Japanese Mizunara oak casks. Chivas Mizunara is the perfect fusion of Scottish craftsmanship and Japanese tradition.This rare oak species offers aBecause harmony always brings more advantages, whether in life or with Scotch."
+                var save = document.querySelector(".save") 
+                    save.onclick = function() {
+                        document.querySelector(".management-edit").classList.add('hide')
+                        document.querySelector(".management-box").classList.remove('hide')
+                            var names = document.querySelector(".editname").value
+                            var prices = document.querySelector(".editprices").value
+                            var cates = document.querySelector(".editselected").innerText
+                            var imgs = document.querySelector(".editimg").src
+                            var quantitys = document.querySelector(".editquantity").value
+                            var edit1s = event.target
+                            var edit2s = edit1s.parentElement.parentElement.parentElement
+                            var editnames = edit2s.querySelector(".chivasname").innerText = names
+                            var editimgs = edit2s.querySelector("img").src = imgs
+                            var editquantitys = edit2s.querySelector(".chivasquantity").innerText = parseInt(quantitys).toLocaleString('de-DE')
+                            var editprices = edit2s.querySelector(".chivasprice").innerText = prices.toLocaleString()
+                            var editcates = edit2s.querySelector(".categories").innerText = cates
+                    }
+                var close = document.querySelector(".close")
+                    close.onclick = function() {
+                        document.querySelector(".management-edit").classList.add('hide')
+                        document.querySelector(".management-box").classList.remove('hide')
+                    }    
+                }})
+            }) 
+        
+            
+
+        const input = document.getElementById("file-input");
+        const image = document.getElementById("img-preview");
+        const icon = document.getElementById("icon-camera");
+
+            input.addEventListener("change", (event) => {
+                image.style.display = "block"
+                if (event.target.files.length) {
+                    const src = URL.createObjectURL(event.target.files[0]);
+                    image.src = src;
+                    icon.style.display = "none"
+                }
+            });
+
+        var add = document.querySelector(".add")
+        add.onclick = function() {
+            document.querySelector(".management-add").classList.remove('hide')
+            document.querySelector(".management-box").classList.add('hide')
+            clearvalue()
+        }    
+
+        var closedetail = document.querySelector(".closedetail") 
+            closedetail.onclick = function() {
+                document.querySelector(".management-order").classList.remove('hide')
+                document.querySelector(".management-details").classList.add('hide')
+            }
+
+        var close = document.querySelector(".closes")
+            close.onclick = function() {
+                document.querySelector(".management-edit").classList.add('hide')
+                document.querySelector(".management-box").classList.remove('hide')
+                document.querySelector(".management-add").classList.add('hide')
+            } 
+
+        const addproduct = document.querySelector(".btn-add");
+            addproduct.onclick = function() {
+                var name = document.querySelector(".name").value
+                var price = document.querySelector(".price").value
+                var img = document.querySelector("#img-preview").src
+                var intro = document.querySelector(".introduce").value
+                var cate = document.querySelector(".selected").innerText
+                var quantity = document.querySelector(".quantity").value
+                moreproduct(name,price,img,intro,cate,quantity)
+            }
+
+            function moreproduct(name,price,img,intro,cate,quantity) {
+                var checkname = document.querySelector(".chivasname").innerText
+                var checkname1 = document.querySelector(".name").value 
+                var checkprice = document.querySelector(".price").value 
+                var checkimg = document.querySelector("#img-preview").src 
+                var checkcate = document.querySelector(".selected").innerHTML
+                var checkintro = document.querySelector(".introduce").value 
+                var checkquantity = document.querySelector(".quantity").value
+                if(checkname === name || checkname1 === ' ' || checkprice ===' ' || checkimg === ' ' || checkcate === 'Choose your category' ||     checkintro === ' ' || checkquantity === ' ') {
+                    var noti = document.querySelector(".notifications")
+                        noti.classList.remove('hide')
+                    var btnok = document.querySelector(".btn-ok")
+                    btnok.onclick = function() {
+                        var notis = document.querySelector(".notifications")
+                        notis.classList.add('hide')
+                    }
+                   
+                    return
+                } else {
+                    document.querySelector(".management-add").classList.add('hide')
+                    document.querySelector(".management-box").classList.remove('hide')
+                    var newTable = document.createElement('tr')
+                        newTable.innerHTML = `
+                        <th class="chivasimg" style="width: calc(100%/4.932);"><img src="${img}" alt=""></th>
+                        <td class="chivasname" style="width: calc(100%/4.932);"><span>${name}</span></td>
+                        <td class="chivasquantity" style="width: calc(100%/4.932);"><span>${parseInt(quantity).toLocaleString('de-DE')}</span></td>
+                        <td class="chivasprice" style="width: calc(100%/4.932);"><span>${parseInt(price).toLocaleString('de-DE')}&nbsp;$</span></td>
+                        <td class="categories hide" style="width: calc(100%/4.932);"><span>${cate}</span></td>
+                        <td class="introduce hide" style="width: calc(100%4.932);"><span>${intro}</span></td>
+                        <td style="width: calc(100%/4.932);">
+                            <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button class="remove"><i class="fa-solid fa-xmark"></i></button>
+                        </td>`
+                    var Tableproduct = document.querySelector(".tableproduct")
+                        Tableproduct.appendChild(newTable)
+                        clearproduct()
+                        clearvalue()
+                        editproduct()
+                    }
+            }
+                
+            function clearvalue() {
+                var name = document.querySelector(".name").value = ' ';
+                var price = document.querySelector(".price").value = ' ';
+                var img = document.querySelector("#img-preview").src = ' ';
+                var cate = document.querySelector(".selected").innerHTML = 'Choose your category';
+                var intro = document.querySelector(".introduce").value = ' ';
+                var quantity = document.querySelector(".editquantity").value = ' ';
+                var camera = document.querySelector(".icon-camera").style.display = "block"
+                var fileinput = document.querySelector("#img-preview").style.display = "none"
+            }
+
+            function clearproduct() {
+                var clear = document.querySelectorAll(".tableproduct tr")
+                for(let i=0;i<clear.length;i++) {
+                    var remove = document.querySelectorAll(".remove") 
+                    remove[i].addEventListener("click",function(event){
+                        var remove1 = event.target
+                        var remove2 = remove1.parentElement.parentElement.parentElement
+                        var noti = document.querySelector(".notification")
+                        var yes = document.querySelector(".btn-yes") 
+                        var no = document.querySelector(".btn-no")
+                        noti.classList.remove('hide')
+                        yes.onclick = function() {
+                            remove2.remove()
+                            noti.classList.add('hide')
+                        }
+                        no.onclick = function() {
+                            noti.classList.add('hide')
+                        }
+                        })
+                    }
+                }   
+            
+            function editproduct() {
+                var edit = document.querySelectorAll(".tableproduct tr")
+                for(let i=0;i<edit.length;i++) {
+                    var editpro = document.querySelectorAll(".edit") 
+                    editpro[i].addEventListener("click",function(event){
+                        document.querySelector(".management-edit").classList.remove('hide')
+                        document.querySelector(".management-box").classList.add('hide')
+                        var editpro1 = event.target
+                        var editpro2 = editpro1.parentElement.parentElement.parentElement
+                        var editname = editpro2.querySelector(".chivasname").innerText
+                        var editimg = editpro2.querySelector("img").src
+                        var editprice = editpro2.querySelector(".chivasprice").innerText
+                        var editcate = editpro2.querySelector(".categories").innerText
+                        var editintroduce = editpro2.querySelector(".introduce").innerText
+                        var editquantity = editpro2.querySelector(".chivasquantity").innerText
+                        var name = document.querySelector(".editname").value = editname
+                        var price = document.querySelector(".editprices").value = editprice
+                        var quantity = document.querySelector(".editquantity").value = editquantity
+                        var img = document.querySelector(".editimg").src = editimg
+                        var cate = document.querySelector(".editselected").innerText = editcate
+                        var introduce = document.querySelector(".editintroduce").innerText = editintroduce
+                        var save = document.querySelector(".save") 
+                            save.onclick = function() {
+                                document.querySelector(".management-edit").classList.add('hide')
+                                document.querySelector(".management-box").classList.remove('hide')
+                                    var names = document.querySelector(".editname").value
+                                    var prices = document.querySelector(".editprices").value
+                                    var cates = document.querySelector(".editselected").innerText
+                                    var imgs = document.querySelector(".editimg").src
+                                    var quantitys = document.querySelector(".editquantity").value
+                                    var edit1s = event.target
+                                    var edit2s = edit1s.parentElement.parentElement.parentElement
+                                    var editnames = edit2s.querySelector(".chivasname").innerText = names
+                                    var editimgs = edit2s.querySelector("img").src = imgs
+                                    var editprices = edit2s.querySelector(".editprice").innerText = prices
+                                    var editcates = edit2s.querySelector(".categories").innerText = cates
+                                    var editquantitys = edit2s.querySelector(".chivasquantity").innerText = quantitys
+                            }
+                        var close = document.querySelector(".close")
+                            close.onclick = function() {
+                                document.querySelector(".management-edit").classList.add('hide')
+                                document.querySelector(".management-box").classList.remove('hide')
+                            }    
+                    })
+                }
+            }
+ 
+        const remove = document.querySelectorAll(".remove") 
+            remove.forEach(function(r,index){
+                r.addEventListener("click",function(event){
+                    var r1 = event.target
+                    var r2 = r1.parentElement.parentElement.parentElement
+                    var noti = document.querySelector(".notification")
+                    var yes = document.querySelector(".btn-yes") 
+                    var no = document.querySelector(".btn-no")
+                    noti.classList.remove('hide')
+                    yes.onclick = function() {
+                        r2.remove()
+                        noti.classList.add('hide')
+                    }
+                    no.onclick = function() {
+                        noti.classList.add('hide')
+                    }
+                })
+            })
+
+        const lock = document.querySelectorAll(".lock")
+            lock.forEach(function(l,index) {
+                l.addEventListener("click",function(event){
+                    var check1 = document.querySelectorAll(".checkbox")
+                    for(let i=0;i<check1.length;i++){
+                        if(check1[i].checked === true) {
+                            lock1 = check1[i].parentElement.parentElement
+                            lock2 = lock1.querySelectorAll("span")
+                            for(let i=0;i<lock2.length;i++) {
+                                lock2[i].style.color = "rgb(255 93 72)"
+                            }
+                            
+                            
+                        }
+                        check1[i].checked = false
+                    }
+                })
+            }) 
+        const unlock = document.querySelectorAll(".unlock")
+            unlock.forEach(function(u,index) {
+                u.addEventListener("click",function(event){
+                    var check2 = document.querySelectorAll(".checkbox")
+                    for(let i=0;i<check2.length;i++){
+                        if(check2[i].checked === true) {
+                            unl1 = check2[i].parentElement.parentElement
+                            unl2 = unl1.querySelectorAll("span")
+                            for(let i=0;i<unl2.length;i++) {
+                                unl2[i].style.color = "rgb(108 107 115)"
+                            }
+                        }
+                        check2[i].checked = false
+                    }
+                })
+            }) 
+        
+        const selected1 = document.querySelector(".editselected");
+        const optionsContainer1 = document.querySelector(".abc");
+        const optionsList1 = document.querySelectorAll(".xyz");
+        selected1.addEventListener("click", () => {
+            optionsContainer1.classList.toggle("active");   
+        });
+        
+        optionsList1.forEach(o => {
+            o.addEventListener("click", () => {
+                selected1.innerHTML = o.querySelector("label").innerHTML;
+                optionsContainer1.classList.remove("active");
+            });
+        });
+        
+        const filterList1 = searchTerm1 => {
+            searchTerm1 = searchTerm1.toLowerCase();
+            optionsList1.forEach(options => {
+                let label = options.firstElementChild.nextElementSibling.innerText.toLowerCase();
+                if (label.indexOf(searchTerm1) != -1) {
+                    options.style.display = "block";
+                } else {
+                    options.style.display = "none";
+                }        
+            });
+        };    
+
+        const selected = document.querySelector(".selected");
+        const optionsContainer = document.querySelector(".option");
+        const optionsList = document.querySelectorAll(".options");
+            selected.addEventListener("click", () => {
+                optionsContainer.classList.toggle("active");
+            });
+            optionsList.forEach(o => {
+                o.addEventListener("click", () => {
+                    selected.innerHTML = o.querySelector("label").innerHTML;
+                    optionsContainer.classList.remove("active");
+                });
+            });
+        const filterList = searchTerm => {
+            searchTerm = searchTerm.toLowerCase();
+                optionsList.forEach(options => {
+                    let label = options.firstElementChild.nextElementSibling.innerText.toLowerCase();
+                    if (label.indexOf(searchTerm) != -1) {
+                        options.style.display = "block";
+                    } else {
+                        options.style.display = "none";
+                    }        
+                });
+            };
+    
+        const detail = document.querySelectorAll(".detail")
+            detail.forEach(function(de,index){
+                de.addEventListener("click",function(event){
+                    var manadetail = document.querySelector(".management-details")
+                        manadetail.classList.remove('hide')
+                    var manaorder = document.querySelector(".management-order")
+                        manaorder.classList.add('hide')
+                    var de1 = event.target
+                    var de2 = de1.parentElement.parentElement.parentElement
+                    var de3 = de2.querySelector("#id").innerText
+                    var de4 = de2.querySelector("#customer").innerText
+                    var de5 = de2.querySelector("#status").innerText
+                    var de6 = de2.querySelector("#pay").innerText
+                    var de7 = de2.querySelector("#date").innerText
+                    var de8 = de2.querySelector("#total").innerText
+                    var odif1 = document.querySelector(".ids").innerText = de3
+                    var odif2 = document.querySelector(".customers").innerText = de4
+                    var odif3 = document.querySelector(".stt").innerText = de5
+                    var odif4 = document.querySelector(".pays").innerText = de6
+                    var odif5 = document.querySelector(".dates").innerText = de7
+                    var odif6 = document.querySelector(".totals").innerText = de8
+                })
+            })
+    </script>
+    <script>
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("admin")
+        }
+    </script>
+    <script>
+        function editimg() {
+            var img = document.querySelector(".img")
+            const inputs = document.getElementById("file-inputs");
+            inputs.addEventListener("change", (i) => {
+                if (i.target.files.length) {
+                    const srcs = URL.createObjectURL(i.target.files[0]);
+                    img.src = srcs
+                }
+                clearimgs = document.querySelector(".editimg")
+                clearimg1s = document.querySelector(".chivasimg img")
+                if(clearimgs.src != "http://127.0.0.1:5500/Html/Management.html") {
+                    clearimgs.classList.remove("hide")
+                    clearimg1s.classList.remove("hide")
+                }
+            });
+            
+        }
+        function removeimg() {
+            clearimg = document.querySelector(".img")
+            clearimg.src = ""
+            if(clearimg.src =="http://127.0.0.1:5500/Html/Management.html" ) {
+                clearimg.classList.add("hide")
+            } else {
+                clearimg.classList.remove("hide")
+            }
+            clearimg1 = document.querySelectorAll(".chivasimg img")
+            cname = document.querySelectorAll(".chivasname span")
+            irname = document.querySelector(".inputname").value
+            cname.forEach(function(ele,index){
+                if(ele.innerText == irname) {
+                    var e1 = ele.parentElement.parentElement
+                    var e2 = e1.querySelector(".chivasimg img")
+                    e2.classList.add("hide")
+                }
+            })
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+    

@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../font/font-awesome-6-pro-main/css/all.css">
+    <link rel="stylesheet" href="../css/Home.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body onload="addcart(), checkuser()">
+    <div id="cart" class="cart"></div>
+    <div id="cart-wrapper" class="animate__animated animate__fadeInRight" >
+        <div class="cart-wrapper">
+            <button id="cart-close" class="cart-close">
+                <i class="close fa-sharp fa-solid fa-xmark"></i>
+            </button>
+            <div class="cart-title">
+                <div class="heading">
+                    <h4 class="title">Cart</h4>
+                    <div class="cart-line"></div>
+                    <p class="cart-text">There are no products in the cart.</p>
+                </div>
+            </div>    
+            <div class="widget style-1" id="widget">
+                
+            </div>
+            <div class="footer-cart">
+                <div  class="provisional">
+                    <p class="provisional-text">
+                        <strong>Provisional:</strong>
+                    <span class="provisional-price">
+                        0&nbsp;
+                    </span> 
+                    <span class="provisional-price-d">$</span>
+                    </p>
+                </div>
+                <p  class="btn-pay-viewcart">
+                    <a href="../Html/Pay.html" class="pay-text">pay</a>
+                    <a href="../Html/Cart.html" class="viewcart-text">view cart</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <header id="header">  
+            <div class="header-wrapper">
+                <div id="header-scrolls" class="header-scrolls animate__animated animate__fadeInDown">
+                    <div id="scroll" class="scroll">
+                        <div class="flex-left">
+                            <ul class="nav">
+                                <li class="menu-item-s">
+                                    <a href="../Html/Home.html" class="nav-text-a">home Page</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Introduce.html" class="nav-text-b">introduce</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Product.html" class="nav-text-c">product
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <div class="box" style="margin-bottom: 5px;">
+                                        <div class="container-2">
+                                            <span class="icons icon"><a class="iconsearchs iconsearch" href=""><i class="fa fa-search"></i></a></span>
+                                            <input type="search" id="search" class="searchs" placeholder="Search..." />
+                                        </div>
+                                      </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-inner" >
+                            <div id="sc-logo" class="sc-logo">
+                                <a href="../Html/Home.html">
+                                    <img width="50" height="50" src="../img/header/logo.png" alt="Wn3" class="scroll-logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-right">
+                            <ul class="navs">
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Blog.html" class="nav-text-a">blog</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Login.html" class="nav-text-b account1" onclick="clickpay()">account
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item">
+                                            <a href="../Html/User.html" class="menu-text user"></a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-text clickpays" onclick="clickpay()">pay</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href=" " class="menu-text logout"  onclick="logout()">log out</a>
+                                        </li> 
+                                    </ul>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Contact.html" class="nav-text-c">contact</a>
+                                </li>
+                                <li id="menu-click" class="menu-item-s">
+                                    <div  class="nav-text-c">
+                                        <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                        <span class="cart-price">0</span>
+                                        <span>$</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="masthead" class="masthead">
+                    <div class="flex-left">
+                        <ul class="nav">
+                            <li class="menu-item">
+                                <a href="../Html/Home.html" class="nav-text-h">home Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Introduce.html" class="nav-text">introduce</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Product.html" class="nav-text-s">product
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                    <li class="menu-item"><a href="Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item " >
+                                <div class="box">
+                                    <div class="container-2">
+                                        <span class="icon"><a class="iconsearch" href=""><i class="fa fa-search"></i></a></span>
+                                        <input type="search" id="search" class="search" placeholder="Search..." />
+                                    </div>
+                                  </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-inner">
+                        <div id="logo" class="logo">
+                            <a href="../Html/Home.html" >
+                                <img width="300" height="100" src="../img/header/chivas-logo-png-transparent.png" alt="Wn3" class="header-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <ul class="navs">
+                            <li class="menu-item">
+                                <a href="../Html/Blog.html" class="nav-text-h">blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Login.html" class="nav-text-s account2" onclick="clickpay()">account
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item">
+                                        <a href="../Html/User.html" class="menu-text users"></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href=" " class="menu-text clickpay" onclick="clickpay()">pay</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Login.html" class="menu-text logouts" onclick="logout()">log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li  class="menu-item">
+                                <a href="../Html/Contact.html" class="nav-text">contact</a>
+                            </li>
+                            <li id="menu-clicks" class="menu-item">
+                                <div id="nav-text" class="nav-text">
+                                    <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                    <span class="cart-prices">0</span> 
+                                    <span>$</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>    
+        </header>
+        <main id="main">
+            <div id="content">
+                <div  class="banner" >
+                    <div class="banner-stc animate__animated animate__fadeInUp" style="animation-duration: 3s;">
+                        <img src="../img/content/chivas-logo-png.png" alt="" class="bn-img">
+                        <h3 class="banner-text">ultis 1999 victory edition</h3>
+                        <h3 class="banner-text">honor the baby owl</h3>
+                        <a  class="btn "> 
+                            <span class="btn-continue">Continue Reading</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="banner" style="background: rgb(11 11 11 / 60%); width: 100%; height: 100%;" >
+                    <div class="banner-stcs animate__animated animate__fadeInUp">
+                        <h3 class="banner-texts">Nothing makes the future look so rosy as to contemplate</h3>
+                        <h3 class="banner-texts">it through a glass of Chambertin.</h3>
+                        <a  class="btn "> 
+                            <span class="btn-continue">Continue Reading</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="zoom-banner">
+                    <div class="banner-fill ">
+                        <img src="../img/content/5d1b7a9bcb366.png" alt="" class="zoom-img">
+                    </div>
+                    <div class="banner-fill ">
+                        <img src="../img/content/5c9a34e9c7750.jpeg" alt="" class="zoom-img">
+                    </div>
+                </div>
+                <a class="prev change" onclick="plusSlides(-1)"><i class="fa-solid fa-angle-left"></i></a>
+                <a class="next change" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right"></i></a>          
+            </div>    
+            <div class="slider">
+                <div class="slider-left">
+                    <div class="slider-text">
+                        <p class="s-text">New Arrivals</p>
+                        <h3 class="text-a">Merlot Red</h3>
+                        <p class="text-b">Adipiscing dignissim euismod
+                        volutpat sociis feugiat purus.</p>
+                        <span class="text-c">Continue Reading</span>
+                    </div>
+                </div>
+                <div class="slider-right">
+                    <div class="slider-text-s">
+                        <p class="s-text">New Arrivals</p>
+                        <h3 class="text-a">Cabernet Sauvignon</h3>
+                        <p class="text-bs">Adipiscing dignissim euismod
+                        volutpat sociis feugiat purus.</p>
+                        <span class="text-c">Continue Reading</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-st">
+                    <div class="st-text">
+                        <span class="st-text-a">CHIVAS X MAN UTD</span>
+                        <div class="st-line"></div>
+                        <p class="st-text-b">“The Chivas family motto defined our brand voice long before our cousins ​​were even born. Use Germany. Don't use Strength."</p>
+                    </div>
+                    <div class="st-chivas">
+                        <div  class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href="../Html/Mizunara.html"><img src="../img/content/Mizunara.png" alt="" class="chivas-logo"></a>
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                    <a href="../Html/Mizunara.html" class="chivas-link">Chivas Mizunara</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">1.579</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity"> 
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div  class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""><img src="../img/content/icon.png" alt="" class="chivas-logo"></a>
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                    <a href="#" class="chivas-link">Chivas Icon</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">2.870</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""><img src="../img/content/ultis.png" alt="" class="chivas-logo"></a>
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                    <a  class="chivas-link">Chivas Ultis</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">8.879</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                        <div class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""><img src="../img/content/chivas18.png" alt="" class="chivas-logo"></a>
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                   <a href="#" class="chivas-link">Chivas 18</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">5.690</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                           </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="section-nd">
+                    <div class="section-nds">
+                        <div class="nd-text">
+                            <div class="nd-texts">
+                                <h3 class="text-h3">French</h3>
+                                <h2 class="text-h2">Malbec</h2>
+                                <p class="text-p">A dictum condimentum parturient quam euismod venenatis a cursus iaculis vehicula pharetra dolor a vehicula integer ullamcorper suspendisse.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-rd">
+                    <div class="st-text">
+                        <span class="st-text-a">Popular White Wine</span>
+                        <div class="st-line"></div>
+                        <p class="st-text-b">Id nunc senectus duis nunc a adipiscing facilisis lorem dignissim senectus duis eu scelerisque nec proin quam mus velit raesent euismod.</p>
+                    </div>
+                    <div class="st-chivas">
+                        <div class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""></a><img src="../img/content/chivasxv.png" alt="" class="chivas-logo">
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                    <a href="#" class="chivas-link">Chivas XV</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">10.570</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""></a><img src="../img/content/chivas25.png" alt="" class="chivas-logo">
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                    <a href="#" class="chivas-link">Chivas 25</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">7.790</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""></a><img src="../img/content/ultisxx.png" alt="" class="chivas-logo">
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                    <a href="#" class="chivas-link">Chivas Ultis XX</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">6.610</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a  class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chivas animate__animated animate__fadeIn">
+                            <i class="fa-icon fa-solid fa-magnifying-glass"></i>
+                            <a href=""></a><img src="../img/content/chivas12.png" alt="" class="chivas-logo">
+                            <div class="chivas-text">
+                                <p class="chivas-name">
+                                   <a href="#" class="chivas-link">Chivas 12</a>
+                                </p>
+                                <div class="chivas-price">
+                                    <span class="price">3.333</span>  
+                                    <span class="price-d">$</span>
+                                    <input type="number" value="1" min="1" max="9999" style="display: none;" class="quantity">
+                                    <div class="chivas-buy">
+                                        <a class="buy">Purchase</a> 
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-th">
+                    <div class="th-text">
+                        <div class="emty-box"></div>
+                        <div class="buy-box">
+                            <div class="recommends">
+                                <h3 class="recommends-text">
+                                    <span class="rc-text">Chef Recommends</span>
+                                </h3>
+                                <div class="rc-line"></div>
+                            </div>
+                            <div class="buy-shop">
+                                <div class="shop">
+                                    <div class="chivas-rc">
+                                        <div class="zoom-chivas">
+                                            <a href="../Html/Mizunara.html" class="rc-a"><img src="../img/content/Mizunara.png" alt="" class="rc-both">
+                                            </a>
+                                        </div>                      
+                                        <div class="rc-chivas-buy">
+                                            <div class="rc-title">
+                                                <a href="../Html/Mizunara.html" class="rc-title-name">Chivas Mizunara</a>
+                                            </div>
+                                            <div class="rc-price">
+                                                <span class="price-wrapper">
+                                                    <span class="rc-p-w">
+                                                        1.579&nbsp;
+                                                    </span>
+                                                    <span class="p-w-d">$</span>
+                                                </span>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                    <div class="chivas-rc">
+                                        <div class="zoom-chivas">
+                                            <a href="../Html/Icon.html" class="rc-a"><img src="../img/content/icon.png" alt="" class="rc-both"></a>
+                                        </div>                      
+                                        <div class="rc-chivas-buy">
+                                            <div class="rc-title">
+                                                <a href="../Html/Icon.html" class="rc-title-name">Chivas Icon</a>
+                                            </div>
+                                            <div class="rc-price">
+                                                <span class="price-wrapper">
+                                                    <span class="rc-p-w">
+                                                        2.870&nbsp;
+                                                    </span>
+                                                    <span class="p-w-d">$</span>
+
+                                                </span>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                    <div class="chivas-rc">
+                                        <div class="zoom-chivas">
+                                            <a href="../Html/Ultis.html" class="rc-a"><img src="../img/content/ultis.png" alt="" class="rc-both"></a>
+                                        </div>                      
+                                        <div class="rc-chivas-buy" >
+                                            <div class="rc-title">
+                                                <a href="../Html/Ultis.html" class="rc-title-name">Chivas Ultis</a>
+                                            </div>
+                                            <div class="rc-price">
+                                                <span class="price-wrapper">
+                                                    <span class="rc-p-w">
+                                                        8.879&nbsp;
+                                                    </span>
+                                                    <span class="p-w-d">$</span>
+                                                </span>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                    <div class="rc-box">
+                                        <a href="../Html/Product.html" class="rc-link">
+                                            <span class="rc-link-text">Go to Shop</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="shop">
+                                    <div class="chivas-rc">
+                                        <div class="zoom-chivas">
+                                            <a href="../Html/Chivas18.html" class="rc-a"><img src="../img/content/chivas18.png" alt="" class="rc-both"></a>
+                                        </div>                      
+                                        <div class="rc-chivas-buy">
+                                            <div class="rc-title">
+                                                <a href="../Html/Chivas18.html" class="rc-title-name">Chivas 18</a>
+                                            </div>
+                                            <div class="rc-price">
+                                                <span class="price-wrapper">
+                                                    <span class="rc-p-w">
+                                                        5.690&nbsp;
+                                                    </span>
+                                                    <span class="p-w-d">$</span>
+
+                                                </span>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                    <div class="chivas-rc">
+                                        <div class="zoom-chivas">
+                                            <a href="../Html/Chivas25.html" class="rc-a"><img src="../img/content/chivas25.png" alt="" class="rc-both"></a>
+                                        </div>                      
+                                        <div class="rc-chivas-buy">
+                                            <div class="rc-title">
+                                                <a href="../Html/Chivas25.html" class="rc-title-name">Chivas 25</a>
+                                            </div>
+                                            <div class="rc-price">
+                                                <span class="price-wrapper">
+                                                    <span class="rc-p-w">
+                                                        7.790&nbsp;
+                                                    </span>
+                                                    <span class="p-w-d">$</span>
+                                            
+                                                </span>    
+                                            </div>
+                                        </div>       
+                                    </div>
+                                    <div class="chivas-rc">
+                                        <div class="zoom-chivas">
+                                            <a href="../Html/Chivasultí&icon.html" class="rc-a"><img src="../img/content/chivasxv.png" alt="" class="rc-both"></a>
+                                        </div>                          
+                                        <div class="rc-chivas-buy">
+                                            <div class="rc-title">
+                                                <a href="../Html/ChivasXV.html" class="rc-title-name">Chivas XV</a>
+                                            </div>
+                                            <div class="rc-price">
+                                                <span class="price-wrapper">
+                                                    <span class="rc-p-w">
+                                                        10.579&nbsp;
+                                                    </span>
+                                                    <span class="p-w-d">$</span>
+                                                </span>
+                                            </div>
+                                        </div>       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-thI">
+                    <div class="st-text">
+                        <span class="st-text-a">Wine News</span>
+                        <div class="st-line"></div>
+                        <p class="st-text-b">Id nunc senectus duis nunc a adipiscing facilisis lorem dignissim senectus duis eu scelerisque nec proin quam mus velit raesent euismod.</p>
+                    </div>
+                    <div class="thI-img">
+                        <div class="zoom-thI">
+                            <div class="thI-box">
+                                <a href="" class="thI-link">
+                                    <div class="thI-img-box" >
+                                        <img src="../img/content/blog-new-2.jpg" alt="" class="blog">
+                                    </div>
+                                    <div class="thI-text-box">
+                                        <h5 class="peus">Venenatis veulum peus</h5>
+                                        <p class="excerpt ">If you want to make parties more refreshing and show your expertise,</p>
+                                        <button class="thI-btn">Continue Reading</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="zoom-thI">
+                            <div class="thI-box">
+                                <a href="" class="thI-link">
+                                    <div class="thI-img-box" >
+                                        <img src="../img/content/blog-new-3.jpg" alt="" class="blog">
+                                    </div>
+                                    <div class="thI-text-box">
+                                        <h5 class="peus">Hac fames tempor</h5>
+                                        <p class="excerpt ">Alcohol is not a poison to be completely avoided, but it is necessary to "avoid" when drinking</p>
+                                       
+                                        <button class="thI-btn">Continue Reading</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="zoom-thI">
+                            <div class="thI-box">
+                                <a href="" class="thI-link">
+                                    <div class="thI-img-box" >
+                                        <img src="../img/content/blog-new-1.jpg" alt="" class="blog">
+                                    </div>
+                                    <div class="thI-text-box">
+                                        <h5 class="peus">Urna ligula inceptos</h5>
+                                        <p class="excerpt ">If you know these rules, you will not be afraid of being "fazed" when you are criticized for not knowing how to reward</p>
+                                        <button class="thI-btn">Continue Reading</button>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-thII">
+                    <div class="thII-contact">
+                        <div class="thII-content">
+                            <h3 class="content-text">
+                                <span class="main-text">Wine on Instagram</span>
+                            </h3>
+                        </div>
+                        <div class="thII-img">
+                            <div class="contact-img">
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-1.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-2.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-3.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-4.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-5.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-6.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-7.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-8.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-9.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-10.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-11.jpg" alt="" class="ct-img">
+                                </div>
+                                <div class="turn-img">
+                                    <img src="../img/content/instagram-12.jpg" alt="" class="ct-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </main>
+        <footer id="footer">
+            <div class="footer">
+                <section class="ft-st">
+                    <div class="ft">
+                        <div class="ft-logo">
+                            <div class="ft-st-logo">
+                                <img src="../img/footer/logo-wine.png" alt="" class="logo-img">
+                            </div>
+                            <div class="ft-icon">
+                                <i class="icon-fb fa-brands fa-facebook-f"></i>
+                                <i class="icon-twt fa-brands fa-twitter"></i>
+                                <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                                <i class="icon-prt fa-brands fa-pinterest"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="ft-nd">
+                    <div class="ft-border">
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Our Stores</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">New York</a></li>
+                                        <li class="col-text"><a href="" class="text-link">London SF</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Cockfosters BP</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Los Angeles</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Chicago</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Las Vegas</a></li>
+                                    </ul>
+                                </div>
+                            </ul>    
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Information</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">About Store</a></li>
+                                        <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Useful links</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">Privacy Policy</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Returns</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Terms & Conditions</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Footer Menu</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href=""class="text-link">Instagram profile</a></li>
+                                        <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box-b">
+                            <div class="menu-wrapper">
+                                <span class="wrapper-title">About The Store</span>
+                            </div>
+                            <div class="menu-lines"></div>
+                            <p>
+                                <span class="p-text">STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</span>
+                            </p>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="location-text"><i class="col-icon fa-solid fa-location-dot"></i><a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+S%C3%A0i+G%C3%B2n/@10.7599171,106.6800696,17z/data=!3m1!4b1!4m5!3m4!1s0x31752f1b7c3ed289:0xa06651894598e488!8m2!3d10.7599171!4d106.6822583?hl=vi" target="_blank" class="text-link">273 An Duong Vuong, Ward 3, District 5, Ho Chi Minh City</a></li>
+                                    <li class="col-text"><i class="col-icon fa-solid fa-mobile-screen-button"></i><a href="tel:(+84) 999 888 999" class="text-link">Phone: (+84) 999 888 999 </a></li>
+   
+                                </ul>
+                            </div>
+                            <div class="col-img">
+                                <img src="../img/footer/payments.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="ft-rd">
+                    <div class="end">
+                        Copyright 2022 © Designed by
+                        <a href="" class="end-link">GoodWineShop.com</a>
+                    </div>
+                </div>
+                <div title="Về đầu trang" class="top-up animate__animated animate__fadeInUp" style="animation-duration: 1s;">
+                    <i class="icon-top fa-solid fa-angle-up"></i>
+                </div>
+            </div>
+            
+        </footer>
+    </div>   
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script type="text/javascript" src="../js/Wn3.js"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("banner-fill");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+            slides[slideIndex-1].style.display = "block";
+        
+            var slides1 = document.getElementsByClassName("banner");
+            if (n > slides1.length) {slideIndex = 1}
+            if (n < 1) {slides1Index = slides1.length}
+                for (i = 0; i < slides1.length; i++) {
+                    slides1[i].style.display = "none";
+                }
+            slides1[slideIndex-1].style.display = "block";
+        }
+
+
+        var myIndex = 0;
+        carousel2();
+        function carousel2() {
+            var i;
+            var x = document.getElementsByClassName("banner-fill");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel2, 20000);
+        }
+
+        var myIndex1 = 0;
+        carousel3();
+        function carousel3() {
+            var i;
+            var x = document.getElementsByClassName("banner");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+            myIndex1++;
+            if (myIndex1 > x.length) {myIndex1 = 1}    
+            x[myIndex1-1].style.display = "block";  
+            setTimeout(carousel3, 20000);    
+        }
+
+    </script>
+    <script>
+        const inputsearchs = document.querySelector(".searchs") 
+        inputsearchs.addEventListener("click",function(event){{
+            var i1 = event.target
+            var i2 = i1.parentElement
+            var i3 = i2.querySelector(".searchs")
+            var i4 = i2.querySelector(".iconsearchs")
+            var Listcate = document.querySelectorAll(".name") 
+            let chivas12 = 'chivas 12'
+            let chivas18 = 'chivas 18'
+            let lisa = 'chivas 18 lisa limited'
+            let mizunara = 'chivas mizunara'
+            let tequila = 'chivas 13 tequila casks'
+            let rum = 'chivas 13 rum casks'
+            let rye = 'chivas 13 rye casks'
+            let bourbon = 'chivas 13 bourbon casks'
+            let sherry = 'chivas 13 sherry casks'
+            let chivas25 = 'chivas 25'
+            let xv = 'chivas xv'
+            let balmain = 'chivas xv balmain'
+            let balmaingold = 'chivas xv balmain gold'
+            let ultis = 'chivas ultis'
+            let ultisxx = 'chivas ultis xx'
+            let icon = 'chivas icon'
+            let chivas13 = 'chivas 13'
+            i3.addEventListener('input',function(check) {
+                let checkName = check.target.value.trim().toLowerCase()
+                if(checkName ==  chivas12.trim().toLowerCase() || checkName ==  mizunara.trim().toLowerCase()) {
+                   i4.href = '../Html/Chivas12&mizunara.html'
+                } else {
+                    i4.href = '../Html/Noproduct.html'
+                }
+                if(checkName ==  chivas18.trim().toLowerCase() || checkName ==  lisa.trim().toLowerCase() ||  checkName ==  balmain.trim().toLowerCase()||  checkName ==  xv.trim().toLowerCase()||  checkName ==  balmaingold.trim().toLowerCase()) {
+                    i4.href = '../Html/Chivas18&xv.html'
+                } 
+                if(checkName ==  ultis.trim().toLowerCase() || checkName == ultisxx.trim().toLowerCase() ||  checkName ==  icon.trim().toLowerCase()) {
+                    i4.href = '../Html/Chivasultí&icon.html'
+                }
+                if(checkName ==  tequila.trim().toLowerCase() || checkName ==  bourbon.trim().toLowerCase() ||  checkName ==  rum.trim().toLowerCase() ||  checkName ==  rye.trim().toLowerCase() ||  checkName ==  sherry.trim().toLowerCase() ||  checkName ==  chivas25.trim().toLowerCase() ||  checkName ==  chivas13.trim().toLowerCase())  {
+                    i4.href = '../Html/Chivas13&25.html'
+                } 
+            }
+        )}
+        })
+    </script>
+    <script>
+        const inputsearch = document.querySelector(".search") 
+        inputsearch.addEventListener("click",function(event){{
+            var i1 = event.target
+            var i2 = i1.parentElement
+            var i3 = i2.querySelector(".search")
+            var i4 = i2.querySelector(".iconsearch")
+            var Listcate = document.querySelectorAll(".name") 
+            let chivas12 = 'chivas 12'
+            let chivas18 = 'chivas 18'
+            let lisa = 'chivas 18 lisa limited'
+            let mizunara = 'chivas mizunara'
+            let tequila = 'chivas 13 tequila casks'
+            let rum = 'chivas 13 rum casks'
+            let rye = 'chivas 13 rye casks'
+            let bourbon = 'chivas 13 bourbon casks'
+            let sherry = 'chivas 13 sherry casks'
+            let chivas25 = 'chivas 25'
+            let xv = 'chivas xv'
+            let balmain = 'chivas xv balmain'
+            let balmaingold = 'chivas xv balmain gold'
+            let ultis = 'chivas ultis'
+            let ultisxx = 'chivas ultis xx'
+            let icon = 'chivas icon'
+            let chivas13 = 'chivas 13'
+            i3.addEventListener('input',function(check) {
+                let checkName = check.target.value.trim().toLowerCase()
+                if(checkName ==  chivas12.trim().toLowerCase() || checkName ==  mizunara.trim().toLowerCase()) {
+                   i4.href = '../Html/Chivas12&mizunara.html'
+                } else {
+                    i4.href = '../Html/Noproduct.html'
+                }
+                if(checkName ==  chivas18.trim().toLowerCase() || checkName ==  lisa.trim().toLowerCase() ||  checkName ==  balmain.trim().toLowerCase()||  checkName ==  xv.trim().toLowerCase()||  checkName ==  balmaingold.trim().toLowerCase()) {
+                    i4.href = '../Html/Chivas18&xv.html'
+                } 
+                if(checkName ==  ultis.trim().toLowerCase() || checkName == ultisxx.trim().toLowerCase() ||  checkName ==  icon.trim().toLowerCase()) {
+                    i4.href = '../Html/Chivasultí&icon.html'
+                }
+                if(checkName ==  tequila.trim().toLowerCase() || checkName ==  bourbon.trim().toLowerCase() ||  checkName ==  rum.trim().toLowerCase() ||  checkName ==  rye.trim().toLowerCase() ||  checkName ==  sherry.trim().toLowerCase() ||  checkName ==  chivas25.trim().toLowerCase() ||  checkName ==  chivas13.trim().toLowerCase())  {
+                    i4.href = '../Html/Chivas13&25.html'
+                } 
+            }
+        )}
+        })
+    </script>
+    <script>
+    let userLogin = !!localStorage.getItem("user")
+    const buy = document.querySelectorAll(".buy")
+        buy.forEach(function(a,index) {
+            a.addEventListener("click",function(event){{
+                var purchase = event.target
+                var chivasbuy = purchase.parentElement.parentElement.parentElement.parentElement
+                var chivasimg = chivasbuy.querySelector("img").src
+                var chivasname = chivasbuy.querySelector(".chivas-name").innerText
+                var chivasprice = chivasbuy.querySelector(".price").innerText
+                var chivasquantity = parseInt( chivasbuy.querySelector(".quantity").value)
+                var product = localStorage.getItem("product") ? JSON.parse(localStorage.getItem("product")) : [];
+                if (userLogin) {
+                    if(product.find(c=>c.name == chivasname)) {
+                        x = parseInt(chivasquantity)+1;
+                        var y = document.querySelectorAll(".input-value").value = x
+                        var z = chivasbuy.querySelector(".quantity").value = y
+                        product[product.findIndex(c=>c.name==chivasname)] = {
+                            name: chivasname,
+                            img: chivasimg,
+                            price: chivasprice,
+                            quantity: z
+                        }
+                        localStorage.setItem("product",JSON.stringify(product))
+                        addcart()
+                        joincart()
+                    } else {
+                        product.push({
+                            name: chivasname,
+                            img: chivasimg,
+                            price: chivasprice,
+                            quantity: chivasquantity
+                        })
+                        localStorage.setItem("product",JSON.stringify(product)) 
+                        addcart()
+                        joincart()
+                    }
+                } else {
+                    window.location.href = "../Html/Login.html"
+                }
+            }})
+            
+        }) 
+    </script>
+    <script>
+        let userLogins = !!localStorage.getItem("user")
+        function checklogin() {
+            if (userLogins) {
+                window.location.href = "../Html/Home.html"
+            }
+        }
+        function clickpay() {
+            var clickpay1 = document.querySelector(".clickpay")
+            var clickpay2 = document.querySelector(".clickpays")
+            var acc1 = document.querySelector(".account1")
+            var acc2 = document.querySelector(".account2")
+            if(userLogins) {
+                clickpay1.href = "../Html/Pay.html"
+                clickpay2.href = "../Html/Pay.html"
+                acc1.href = "../Html/User.html"
+                acc2.href = "../Html/User.html"
+
+            } else {
+                clickpay1.href = "../Html/Login.html"
+                clickpay2.href = "../Html/Login.html"
+                acc1.href = "../Html/Login.html"
+                acc2.href = "../Html/Login.html"
+            }
+        }
+        function logout() {
+            localStorage.removeItem("user")
+            window.location.href = "../Html/Login.html"
+        }
+        function checkuser() {
+            var checkuser = localStorage.getItem("user") ;
+            if(userLogins) {
+                document.querySelector(".logout").style.display = "block"
+                document.querySelector(".logouts").style.display = "block"
+                document.querySelector(".user").style.display = "block"
+                document.querySelector(".users").style.display = "block"
+                var cuser = document.querySelector(".user").innerText = checkuser
+                var cuser = document.querySelector(".users").innerText = checkuser
+            } else {
+                document.querySelector(".logout").style.display = "none"
+                document.querySelector(".logouts").style.display = "none"
+                document.querySelector(".user").style.display = "none"
+                document.querySelector(".users").style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/Pay.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body onload="addcart(), checkuser()">
+    <div id="cart" class="cart"></div>
+    <div id="cart-wrapper" class="animate__animated animate__fadeInRight" >
+        <div class="cart-wrapper">
+            <button id="cart-close" class="cart-close">
+                <i class="close fa-sharp fa-solid fa-xmark"></i>
+            </button>
+            <div class="cart-title">
+                <div class="heading">
+                    <h4 class="title">Cart</h4>
+                    <div class="cart-line"></div>
+                    <p class="cart-text">There are no products in the cart.</p>
+                </div>
+            </div>    
+            <div class="widget style-1" id="widget">
+                
+            </div>
+            <div class="footer-cart">
+                <div  class="provisional">
+                    <p class="provisional-text">
+                        <strong>Provisional:</strong>
+                    <span class="provisional-price">
+                        0&nbsp;
+                    </span> 
+                    <span class="provisional-price-d">$</span>
+                    </p>
+                </div>
+                <p  class="btn-pay-viewcart">
+                    <a href="../Html/Pay.html" class="pay-text">pay</a>
+                    <a href="../Html/Cart.html" class="viewcart-text">view cart</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-wrapper">
+                <div id="header-scrolls" class="header-scrolls">
+                    <div id="scroll" class="scroll">
+                        <div class="flex-left">
+                            <ul class="nav">
+                                <li class="menu-item-s">
+                                    <a href="../Html/Home.html" class="nav-text-a">home Page</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Introduce.html" class="nav-text-b">introduce</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Product.html" class="nav-text-c">product
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-inner" >
+                            <div id="sc-logo" class="sc-logo">
+                                <a href="../Html/Home.html">
+                                    <img width="50" height="50" src="..//img/header/logo.png" alt="Wn3" class="scroll-logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-right">
+                            <ul class="navs">
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Blog.html" class="nav-text-a">blog</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Login.html" class="nav-text-b account1" onclick="clickpay()">account
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item">
+                                            <a href="../Html/User.html" class="menu-text user"></a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-text clickpays" onclick="clickpay()">pay</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href=" " class="menu-text logout" onclick="logout()">log out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Contact.html" class="nav-text-c">contact</a>
+                                </li>
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Cart.html">
+                                        <div  class="nav-text-c">
+                                            <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                            <span class="cart-price">0</span>
+                                            <span>$</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="top-bar" class="top-bar">
+                    <div class="top-bar-header">
+                        <div class="top-bar-right">
+                            <i class="phone-icon fa-solid fa-square-phone"></i>
+                            <span class="text-top-bar">Hotline: </span>
+                            <a href="tel:(+84) 999 888 999" class="tel-top-bar">(+84) 999 888 999</a>
+                        </div>
+                        <div class="top-bar-left">
+                            <i class="icon-bar-left fa-brands fa-facebook-f"></i>
+                            <i class="icon-bar-left fa-brands fa-instagram"></i>
+                            <i class="icon-bar-left fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-bar-left fa-solid fa-square-envelope"></i></a>
+                        </div>
+                    </div>    
+                </div>
+                <div id="masthead" class="masthead">
+                    <div class="flex-left">
+                        <ul class="nav">
+                            <li class="menu-item">
+                                <a href="../Html/Home.html" class="nav-text-h">home Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Introduce.html" class="nav-text">introduce</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Product.html" class="nav-text-s">product
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                    <li class="menu-item"><a href="Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="header-inner">
+                        <div id="logo" class="logo">
+                            <a href="../Html/Home.html" >
+                                <img width="300" height="100" src="..//img/header/chivas-logo-png-transparent.png" alt="Wn3" class="header-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <ul class="navs">
+                            <li class="menu-item">
+                                <a href="../Html/Blog.html" class="nav-text-h" >blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Login.html" class="nav-text-s account2"  style="color: rgb(46 197 124);" onclick="clickpay()">account
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item">
+                                        <a href="../Html/User.html" class="menu-text users"></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href=" " class="menu-text clickpay" onclick="clickpay()">pay</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Login.html" class="menu-text logouts" onclick="logout()">log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li  class="menu-item">
+                                <a href="../Html/Contact.html" class="nav-text">contact</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Cart.html">
+                                    <div id="nav-text" class="nav-text">
+                                        <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                        <span class="cart-prices">0</span> 
+                                        <span>$</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>    
+        </header>
+        <main id="main">
+            <div class="pay-heading">
+                <div class="heading">
+                    <a href="../Html/Cart.html"><h1 class="heading-pay-st">Cart</h1></a>
+                    <i class="heading-icon fa-solid fa-angle-right"></i>
+                    <a href="../Html/Pay.html"><h1 class="heading-pay-nd">Pay</h1></a>
+                    <i class="heading-icon fa-solid fa-angle-right"></i>
+                    <h1 class="heading-pay-th">Completed</h1>
+                </div>
+            </div>
+            <div class="pay-content">
+                <div class="slider">
+                    <div class="form-left">
+                        <div class="information">
+                            <div class="information-bill">
+                                <h3 class="billing">Shipment Details</h3>
+                                <div class="user-info">
+                                    <section class="address">
+                                        <address> 
+                                            Name&nbsp;:&nbsp;Lê Văn Diễn
+                                            <br>
+                                            Address&nbsp;:&nbsp;9 Nguyễn Văn Cừ, Phường 1, Quận 5, Thành Phố Hồ Chí Minh
+                                            <p class="address-phone">
+                                            Phone number&nbsp;:&nbsp;0335710213
+                                            </p> 
+                                        </address>
+                                    </section>   
+                                </div>
+                            </div>
+                            <div class="information-bill">
+                                <h3 class="billing">billing information</h3>
+                                <div class="user-info">
+                                    <section class="address">
+                                        <address> 
+                                            Bank&nbsp;:&nbsp;Mb Bank
+                                            <br>
+                                            ID Card&nbsp;:&nbsp;214324324
+                                            <br>
+                                            Account name&nbsp;:&nbsp;Lê Văn Diễn
+                                            <p class="address-phone">
+                                            Phone number&nbsp;:&nbsp;0335710213
+                                            </p>
+                                            <p class="address-email">
+                                            Email&nbsp;:&nbsp;vandien12584@gmail.com
+                                            </p> 
+                                           
+                                        </address>
+                                    </section>   
+                                </div>
+                            </div>
+                            <div class="addtional-fill">
+                                <h3>addtional information</h3>
+                                <div>
+                                    <p class="order-option">
+                                        <label for="">
+                                            Order notes
+                                            <span class="optional">(optional)</span>
+                                        </label>
+                                        <span style="width: 100%; height: 100%;">
+                                            <textarea class="input-text" id="order_comments" placeholder="Order notes, for example, more detailed delivery times or locations." rows="2" cols="5"></textarea>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-right">
+                        <div class="order">
+                            <h3 class="your-oder">your order</h3>
+                            <div class="oder-review">
+                                <table class="product-provisinal">
+                                    <thead>
+                                        <tr >
+                                            <th class="product-name">product</th>
+                                            <th class="product-total">provisional</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="pro-item">
+                                            <td class="product-name">
+                                                Chivas 18&nbsp;						 <strong class="product-quantity">×&nbsp;1</strong>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="price-amount">5,690&nbsp;<span class="price-currencySymbol">$</span></span>
+                                            </td>
+                                        </tr>
+                                        <tr class="pro-item">
+                                            <td class="product-name">
+                                                Chivas 18&nbsp;						 <strong class="product-quantity">×&nbsp;1</strong>
+                                            </td>
+                                            <td class="product-total">
+                                                <span class="price-amount">5,690&nbsp;<span class="price-currencySymbol">$</span></span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="cart-subtotal">
+                                            <th>Tạm tính</th>
+                                            <td><span class="price-amount">11,580&nbsp;<span class="price-currencySymbol">$</span></span></td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Tổng</th>
+                                            <td><strong><span class="price-amount">11,580&nbsp;<span class="price-currencySymbol">$</span></span></strong></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <div class="payment">
+                                    <ul class="payment-list">
+                                        <li class="payment-bank">
+                                            <input type="radio" checked name="option-input" value="bacs" data-oder_button_text>
+                                            <label for="payment_method_bacs">Bank transfer</label>
+                                            <div class="payment-text">
+                                                <p>Make payments to our bank account instantly. Please use your Order ID in the Billing Contents section.Orders will be shipped after payment has been made.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="payment-cash" >
+                                            <input type="radio" value="cod" name="option-input" data-oder_button_text>
+                                            <label for="payment_method_cod">Cash on delivery</label>
+                                            <div class="payment-text">
+                                                <p >Cash on delivery</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-order">
+                                        <a href="../Html/Complete.html" class="btn-order-link">
+                                            <button class="btn-order-click">
+                                                order
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <section class="ft-st">
+                <div class="ft">
+                    <div class="ft-logo">
+                        <div class="ft-st-logo">
+                            <img src="../img/footer/logo-wine.png" alt="" class="logo-img">
+                        </div>
+                        <div class="ft-icon">
+                            <i class="icon-fb fa-brands fa-facebook-f"></i>
+                            <i class="icon-twt fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                            <i class="icon-prt fa-brands fa-pinterest"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="ft-nd">
+                <div class="ft-border">
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Our Stores</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">New York</a></li>
+                                    <li class="col-text"><a href="" class="text-link">London SF</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Cockfosters BP</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Los Angeles</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Chicago</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Las Vegas</a></li>
+                                </ul>
+                            </div>
+                        </ul>    
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Information</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">About Store</a></li>
+                                    <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Useful links</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">Privacy Policy</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Returns</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Terms & Conditions</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Footer Menu</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href=""class="text-link">Instagram profile</a></li>
+                                    <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box-b">
+                        <div class="menu-wrapper">
+                            <span class="wrapper-title">About The Store</span>
+                        </div>
+                        <div class="menu-lines"></div>
+                        <p>
+                            <span class="p-text">STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</span>
+                        </p>
+                        <div class="menu-col">
+                            <ul class="col-footer">
+                                <li class="location-text"><i class="col-icon fa-solid fa-location-dot"></i><a href=""class="text-link">273 An Duong Vuong, Ward 3, District 5, Ho Chi Minh City</a></li>
+                                <li class="col-text"><i class="col-icon fa-solid fa-mobile-screen-button"></i><a href="tel:(+84) 999 888 999" class="text-link">Phone: (+84) 999 888 999 </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-img">
+                            <img src="../img/footer/payments.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="ft-rd">
+                <div class="end">
+                    Copyright 2022 © Designed by
+                    <a href="" class="end-link">GoodWineShop.com</a>
+                </div>
+            </div>
+            <div title="Về đầu trang" class="top-up">
+                <i class="icon-top fa-solid fa-angle-up"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script type="text/javascript" src="../js/Wn3.js"></script>
+    <script>
+        let userLogins = !!localStorage.getItem("user")
+        function clickpay() {
+            var clickpay1 = document.querySelector(".clickpay")
+            var clickpay2 = document.querySelector(".clickpays")
+            var acc1 = document.querySelector(".account1")
+            var acc2 = document.querySelector(".account2")
+            if(userLogins) {
+                clickpay1.href = "../Html/Pay.html"
+                clickpay2.href = "../Html/Pay.html"
+                acc1.href = "../Html/User.html"
+                acc2.href = "../Html/User.html"
+
+            } else {
+                clickpay1.href = "../Html/Login.html"
+                clickpay2.href = "../Html/Login.html"
+                acc1.href = "../Html/Login.html"
+                acc2.href = "../Html/Login.html"
+            }
+        }
+
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("user")
+        }
+
+
+        function checkuser() {
+            var checkuser = localStorage.getItem("user");
+            if(userLogins) {
+                document.querySelector(".logout").style.display = "block"
+                document.querySelector(".logouts").style.display = "block"
+                document.querySelector(".user").style.display = "block"
+                document.querySelector(".users").style.display = "block"
+                var cuser = document.querySelector(".user").innerText = checkuser
+                var cuser = document.querySelector(".users").innerText = checkuser
+                console.log(cuser);
+            } else {
+                document.querySelector(".logout").style.display = "none"
+                document.querySelector(".logouts").style.display = "none"
+                document.querySelector(".user").style.display = "none"
+                document.querySelector(".users").style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

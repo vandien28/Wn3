@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body>
+    <div id="cart" class="cart"></div>
+    <div id="cart-wrapper">
+        <div class="cart-wrapper">
+            <button id="cart-close" class="cart-close">
+                <i class="close fa-sharp fa-solid fa-xmark"></i>
+            </button>
+            <div class="cart-title">
+                <div class="heading">
+                    <h4 class="title">Cart</h4>
+                    <div class="cart-line"></div>
+                    <p class="cart-text">There are no products in the cart.</p>
+                </div>
+            </div>    
+            <div class="widget" id="widget">
+                
+            </div>
+            <div class="footer-cart">
+                <div  class="provisional">
+                    <p class="provisional-text">
+                        <strong>Provisional:</strong>
+                    <span class="provisional-price">
+                        0&nbsp;
+                    </span> 
+                    <span class="provisional-price-d">$</span>
+                    </p>
+                </div>
+                <p  class="btn-pay-viewcart">
+                    <a href="../Html/Pay.html" class="pay-text">pay</a>
+                    <a href="../Html/Cart.html" class="viewcart-text">view cart</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-wrapper">
+                <div id="header-scrolls" class="header-scrolls">
+                    <div id="scroll" class="scroll">
+                        <div class="flex-left">
+                            <ul class="nav">
+                              <li class="menu-item-s">
+                                    <a href="../Html/Home.html" class="nav-text-a">home Page</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Introduce.html" class="nav-text-b">introduce</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Product.html" class="nav-text-c">product
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-inner" >
+                            <div id="sc-logo" class="sc-logo">
+                                <a href="../Html/Home.html">
+                                    <img width="50" height="50" src="../img/header/logo.png" alt="Wn3" class="scroll-logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-right">
+                            <ul class="navs">
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Blog.html" class="nav-text-a">blog</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Login.html" class="nav-text-b">account
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item">
+                                            <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="../Html/Pay.html" class="menu-text">pay</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Contact.html" class="nav-text-c">contact</a>
+                                </li>
+                                <li id="menu-click" class="menu-item-s">
+                                    <div  class="nav-text-c">
+                                        <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                        <span class="cart-price">0</span>
+                                        <span>$</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="top-bar" class="top-bar">
+                    <div class="top-bar-header">
+                        <div class="top-bar-right">
+                            <i class="phone-icon fa-solid fa-square-phone"></i>
+                            <span class="text-top-bar">Hotline: </span>
+                            <a href="tel:(+84) 999 888 999" class="tel-top-bar">(+84) 999 888 999</a>
+                        </div>
+                        <div class="top-bar-left">
+                            <i class="icon-bar-left fa-brands fa-facebook-f"></i>
+                            <i class="icon-bar-left fa-brands fa-instagram"></i>
+                            <i class="icon-bar-left fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-bar-left fa-solid fa-square-envelope"></i></a>
+                        </div>
+                    </div>    
+                </div>
+                <div id="masthead" class="masthead">
+                    <div class="flex-left">
+                        <ul class="nav">
+                            <li class="menu-item">
+                                <a href="../Html/Home.html" class="nav-text-h">home Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Introduce.html" class="nav-text">introduce</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Product.html" class="nav-text-s">product
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                    <li class="menu-item"><a href="Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-inner">
+                        <div id="logo" class="logo">
+                            <a href="../Html/Home.html" >
+                                <img width="300" height="100" src="../img/header/chivas-logo-png-transparent.png" alt="Wn3" class="header-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <ul class="navs">
+                            <li class="menu-item">
+                                <a href="../Html/Blog.html" class="nav-text-h">blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Login.html" class="nav-text-s" style="color: rgb(46 197 124);">account
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item">
+                                        <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Pay.html" class="menu-text">pay</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li  class="menu-item">
+                                <a href="../Html/Contact.html" class="nav-text">contact</a>
+                            </li>
+                            <li id="menu-clicks" class="menu-item">
+                                <div class="nav-text">
+                                    <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                    <span class="cart-prices">0</span>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>    
+        </header>
+        <main id="main">
+            <div class="account">
+                <div class="titles">
+                    <h1 class="title-account"> 
+                        account
+                    </h1>
+                </div>
+            </div>
+            <div class="container">
+                <div class="container1">
+                    <div class="forms">
+                        <!-- Form Login -->
+                        <div class="form login">
+                            <span class="title1">Login</span>
+                            <form action="/" id="formlogin"> 
+                                <div class="input-field" style="margin-top: 40px;">
+                                    <input type="text" placeholder="Enter your account name" id="email" required>
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" class="password"  placeholder="Enter your password" id="password" required>
+                                    <i class="fa-solid fa-lock icones"></i>
+                                    <i class="fa-solid fa-eye-slash showHidePw"></i>
+                                </div>
+                                <p class="wrong hide notiwrong"><i class="fa-solid fa-xmark"></i>Wrong username or password</p>
+                                <div class="checkbox-text">
+                                    <div class="checkbox-content">
+                                        <input type="checkbox" id="logCheck">
+                                        <label for="logCheck" class="text">Remember me</label>
+                                    </div>
+                                    <a href="#" class="text">Forgot password?</a>
+                                </div>
+                                <div class="input-field button">
+                                    <input type="submit" value="Login">
+                                </div>
+                            </form>
+                            <div class="login-signup">
+                                <span class="text">Not a member?
+                                    <a href="#" class="text signup-link">Signup now</a>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- From Sign up -->
+                        <div class="form signup" >
+                            <span class="title1">Sign up</span>
+                            <form action="/" id="formes">
+                                <div class="input-field input-check"  style="margin-top: 40px;">
+                                    <input type="text" id="username" placeholder="Enter your account name"  name="name" required>
+                                    <i class="fa-solid fa-user"></i>
+                                    <i class="checkcircle hide fa-solid fa-circle-check"></i>
+                                    <i class="xmarkcircle hide fa-solid fa-circle-xmark"></i>
+                                </div> 
+                                <p class="wrongname notiwrong "></p>
+                                <div class="input-field input-check">
+                                    <input type="email" id="email1" placeholder="Enter your email"  name="email" required>
+                                    <i class="fa-solid fa-envelope icones"></i>
+                                </div>
+                                <div class="input-field input-check">
+                                    <input type="password" id="password1" class="password" placeholder="Create a password" name="password" required="">
+                                    <i class="fa-solid fa-lock icones"></i>                
+                                </div>
+                                <p class="wrongpassword notiwrong hide"></i>You have not entered this field</p>
+                                <div class="input-field input-check" >
+                                    <input type="password" class="password" id="confirmpsw" placeholder="Confirm a password" name="confirmpsw" required>
+                                    <i class="fa-solid fa-lock icones"></i>
+                                    <i class="fa-solid fa-eye-slash showHidePw"></i>
+                                </div>
+                                <p class="wrongcfmpass notiwrong hide"></i>You have not entered this field</p>
+                                <div class="checkbox-text">
+                                    <div class="checkbox-content">
+                                        <input type="checkbox" id="termCon">
+                                        <label for="termCon" class="text">I accepted all terms and conditions</label>
+                                    </div>
+                                </div>
+                                <div class="input-field button">
+                                    <input type="submit" value="Signup">
+                                </div>
+                            </form>
+                            <div class="login-signup">
+                                <span class="text">Already a member?
+                                    <a href="#" class="text login-link">Login Now</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer">
+                <section class="ft-st">
+                    <div class="ft">
+                        <div class="ft-logo">
+                            <div class="ft-st-logo">
+                                <img src="../img/footer/logo-wine.png" alt="" class="logo-img">
+                            </div>
+                            <div class="ft-icon">
+                                <i class="icon-fb fa-brands fa-facebook-f"></i>
+                                <i class="icon-twt fa-brands fa-twitter"></i>
+                                <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                                <i class="icon-prt fa-brands fa-pinterest"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="ft-nd">
+                    <div class="ft-border">
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Our Stores</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">New York</a></li>
+                                        <li class="col-text"><a href="" class="text-link">London SF</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Cockfosters BP</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Los Angeles</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Chicago</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Las Vegas</a></li>
+                                    </ul>
+                                </div>
+                            </ul>    
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Information</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">About Store</a></li>
+                                        <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Useful links</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href="" class="text-link">Privacy Policy</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Returns</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Terms & Conditions</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                        <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box">
+                            <ul class="menu"> 
+                                <div class="menu-wrapper">
+                                    <span class="menu-title">Footer Menu</span>
+                                </div>    
+                                <div class="menu-line"></div>
+                                <div class="menu-col">
+                                    <ul class="col-footer">
+                                        <li class="col-text"><a href=""class="text-link">Instagram profile</a></li>
+                                        <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                        <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    </ul>
+                                </div>
+                            </ul> 
+                        </div>
+                        <div class="ft-box-b">
+                            <div class="menu-wrapper">
+                                <span class="wrapper-title">About The Store</span>
+                            </div>
+                            <div class="menu-lines"></div>
+                            <p>
+                                <span class="p-text">STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</span>
+                            </p>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="location-text"><i class="col-icon fa-solid fa-location-dot"></i><a href=""class="text-link">273 An Duong Vuong, Ward 3, District 5, Ho Chi Minh City</a></li>
+                                    <li class="col-text"><i class="col-icon fa-solid fa-mobile-screen-button"></i><a href="tel:(+84) 999 888 999" class="text-link">Phone: (+84) 999 888 999 </a></li>
+                                </ul>
+                            </div>
+                            <div class="col-img">
+                                <img src="../img/footer/payments.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="ft-rd">
+                    <div class="end">
+                        Copyright 2022 © Designed by
+                        <a href="" class="end-link">GoodWineShop.com</a>
+                    </div>
+                </div>
+                <div title="Về đầu trang" class="top-up">
+                    <i class="icon-top fa-solid fa-angle-up"></i>
+                </div>
+            </div>
+        </footer>
+    </div>   
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script type="text/javascript" src="../js/Authenticator.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function() {
+            var menu = document.querySelector('#header-scrolls');
+            var trangthai="duoi200";
+            window.addEventListener("scroll",function(){
+                var x = pageYOffset;
+                if(x > 120){
+                    if(trangthai == "duoi200")
+                    {
+                        trangthai="tren200";
+                        menu.classList.add('apper-header');
+                    }
+                }
+                else{
+                    if(trangthai=="tren200"){
+                    menu.classList.remove('apper-header');
+                    trangthai="duoi200";}
+                }
+            })
+        })
+
+
+        var offset = 500;
+        var duration = 1;
+            $(function(){
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > offset) {
+                    $('.top-up').fadeIn(duration);
+                }
+                else {
+                    $('.top-up').fadeOut(duration);
+                }
+            });
+            $('.top-up').click(function () {
+            $('body,html').animate({scrollTop: 0}, duration);
+                });
+            });
+
+    </script>
+</body>
+</html>

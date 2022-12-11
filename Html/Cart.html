@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/Cart.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body onload="joincart(), checkuser()">  
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-wrapper">
+                <div id="header-scrolls" class="header-scrolls">
+                    <div id="scroll" class="scroll">
+                        <div class="flex-left">
+                            <ul class="nav">
+                                <li class="menu-item-s">
+                                    <a href="../Html/Home.html" class="nav-text-a">home Page</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Introduce.html" class="nav-text-b">introduce</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Product.html" class="nav-text-c">product
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="header-inner" >
+                            <div id="sc-logo" class="sc-logo">
+                                <a href="../Html/Home.html">
+                                    <img width="50" height="50" src="..//img/header/logo.png" alt="Wn3" class="scroll-logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-right">
+                            <ul class="navs">
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Blog.html" class="nav-text-a">blog</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Login.html" class="nav-text-b account1" onclick="clickpay()">account
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item">
+                                            <a href="../Html/User.html" class="menu-text user"></a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-text clickpays" onclick="clickpay()">pay</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href=" " class="menu-text logout" onclick="logout()">log out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Contact.html" class="nav-text-c">contact</a>
+                                </li>
+                                <li id="menu-click" class="menu-item-s">
+                                    <div  class="nav-text-c">
+                                        <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                        <span class="cart-price">0</span>
+                                        <span>$</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="top-bar" class="top-bar">
+                    <div class="top-bar-header">
+                        <div class="top-bar-right">
+                            <i class="phone-icon fa-solid fa-square-phone"></i>
+                            <span class="text-top-bar">Hotline: </span>
+                            <a href="tel:(+84) 999 888 999" class="tel-top-bar">(+84) 999 888 999</a>
+                        </div>
+                        <div class="top-bar-left">
+                            <i class="icon-bar-left fa-brands fa-facebook-f"></i>
+                            <i class="icon-bar-left fa-brands fa-instagram"></i>
+                            <i class="icon-bar-left fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-bar-left fa-solid fa-square-envelope"></i></a>
+                        </div>
+                    </div>    
+                </div>
+                <div id="masthead" class="masthead">
+                    <div class="flex-left">
+                        <ul class="nav">
+                            <li class="menu-item">
+                                <a href="../Html/Home.html" class="nav-text-h">home Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Introduce.html" class="nav-text">introduce</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Product.html" class="nav-text-s">product
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                    <li class="menu-item"><a href="Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="header-inner">
+                        <div id="logo" class="logo">
+                            <a href="../Html/Home.html" >
+                                <img width="300" height="100" src="..//img/header/chivas-logo-png-transparent.png" alt="Wn3" class="header-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <ul class="navs">
+                            <li class="menu-item">
+                                <a href="../Html/Blog.html" class="nav-text-h">blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Login.html" class="nav-text-s account2" style="color: rgb(46 197 124);" onclick="clickpay()">account
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item">
+                                        <a href="../Html/User.html" class="menu-text users"></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href=" " class="menu-text clickpay" onclick="clickpay()">pay</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Login.html" class="menu-text logouts" onclick="logout()">log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li  class="menu-item">
+                                <a href="../Html/Contact.html" class="nav-text">contact</a>
+                            </li>
+                            <li id="menu-clicks" class="menu-item">
+                                <div class="nav-text">
+                                    <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                    <span class="cart-prices">0</span>
+                                    <span>$</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>    
+        </header>
+        <main id="main">
+            <div class="cart-heading">
+                <div class="heading">
+                    <a href="../Html/Cart.html"><h1 class="heading-cart-st">Cart</h1></a>
+                    <i class="heading-icon fa-solid fa-angle-right"></i>
+                    <h1 class="heading-cart-nd">Pay</h1>
+                    <i class="heading-icon fa-solid fa-angle-right"></i>
+                    <h1 class="heading-cart-th">Completed</h1>
+                </div>
+            </div>
+            <div class="cart-content">
+                <div class="content">
+                    <div class="content-text">
+                        <p class="cart-empty">There are no products in the shopping cart.</p>
+                        <p class="return-btn">
+                            <a href="../Html/Product.html" class="btn-text">back to the store</a>
+                        </p>
+                    </div> 
+                    <div id="content-product">
+                        <div class="content-product" >
+                            <div class="product-left">
+                                <div class="product-info">
+                                    <form action="../Html/Cart.html">
+                                        <div class="product-wrapper">
+                                            <table class="table-product">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="product-name" colspan="3">Product</th>
+                                                        <th class="product-price">Price</th>
+                                                        <th class="product-quantity">amount</th>
+                                                        <th class="product-subtotal">provisional</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="contain-product">
+                                                    
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6" class="btn-shopping">
+                                                           <div class="continue-shopping" > 
+                                                               <a class="button-continue-shopping button" href="../Html/Product.html"><i class="fa-solid fa-arrow-left"></i>&nbsp;Continue to view products </a>
+                                                           </div>
+                                                       </td> 
+                                                   </tr> 
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="product-right">
+                                <div class="add-cart">
+                                    <div class="cart-sidebar">
+                                        <table cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="product-name" colspan="2" style="border-width:4px;">
+                                                        Add shopping cart
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                        <table cellspacing="0" class="">
+                                            <tbody>
+                                                <tr class="cart-subtotal">
+                                                    <th>Provisional</th>
+                                                    <td>
+                                                        <span class="provisional">1.579&nbsp;</span>
+                                                        <span class="provisional-d">$</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="order-total">
+                                                    <th>Total</th>
+                                                    <td>
+                                                        <strong>
+                                                            <span class="provisionals">1.579&nbsp;</span>
+                                                            <span>$</span>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="payment">
+                                            <a href="../Html/Pay.html" class="payment-btn">Make a payment</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <section class="ft-st">
+                <div class="ft">
+                    <div class="ft-logo">
+                        <div class="ft-st-logo">
+                            <img src="../img/footer/logo-wine.png" alt="" class="logo-img">
+                        </div>
+                        <div class="ft-icon">
+                            <i class="icon-fb fa-brands fa-facebook-f"></i>
+                            <i class="icon-twt fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                            <i class="icon-prt fa-brands fa-pinterest"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="ft-nd">
+                <div class="ft-border">
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Our Stores</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">New York</a></li>
+                                    <li class="col-text"><a href="" class="text-link">London SF</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Cockfosters BP</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Los Angeles</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Chicago</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Las Vegas</a></li>
+                                </ul>
+                            </div>
+                        </ul>    
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Information</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">About Store</a></li>
+                                    <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Useful links</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">Privacy Policy</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Returns</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Terms & Conditions</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Footer Menu</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href=""class="text-link">Instagram profile</a></li>
+                                    <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box-b">
+                        <div class="menu-wrapper">
+                            <span class="wrapper-title">About The Store</span>
+                        </div>
+                        <div class="menu-lines"></div>
+                        <p>
+                            <span class="p-text">STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</span>
+                        </p>
+                        <div class="menu-col">
+                            <ul class="col-footer">
+                                <li class="location-text"><i class="col-icon fa-solid fa-location-dot"></i><a href=""class="text-link">273 An Duong Vuong, Ward 3, District 5, Ho Chi Minh City</a></li>
+                                <li class="col-text"><i class="col-icon fa-solid fa-mobile-screen-button"></i><a href="tel:(+84) 999 888 999" class="text-link">Phone: (+84) 999 888 999 </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-img">
+                            <img src="../img/footer/payments.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="ft-rd">
+                <div class="end">
+                    Copyright 2022 © Designed by
+                    <a href="" class="end-link">GoodWineShop.com</a>
+                </div>
+            </div>
+            <div title="Về đầu trang" class="top-up">
+                <i class="icon-top fa-solid fa-angle-up"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script type="text/javascript" src="../js/Wn3.js"></script>
+    <script>
+        let userLogins = !!localStorage.getItem("user")
+        function clickpay() {
+            var clickpay1 = document.querySelector(".clickpay")
+            var clickpay2 = document.querySelector(".clickpays")
+            var acc1 = document.querySelector(".account1")
+            var acc2 = document.querySelector(".account2")
+            if(userLogins) {
+                clickpay1.href = "../Html/Pay.html"
+                clickpay2.href = "../Html/Pay.html"
+                acc1.href = "../Html/User.html"
+                acc2.href = "../Html/User.html"
+
+            } else {
+                clickpay1.href = "../Html/Login.html"
+                clickpay2.href = "../Html/Login.html"
+                acc1.href = "../Html/Login.html"
+                acc2.href = "../Html/Login.html"
+            }
+        }
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("user")
+        }
+        function checkuser() {
+            var checkuser = localStorage.getItem("user") ;
+            if(userLogins) {
+                document.querySelector(".logout").style.display = "block"
+                document.querySelector(".logouts").style.display = "block"
+                document.querySelector(".user").style.display = "block"
+                document.querySelector(".users").style.display = "block"
+                var cuser = document.querySelector(".user").innerText = checkuser
+                var cuser = document.querySelector(".users").innerText = checkuser
+            } else {
+                document.querySelector(".logout").style.display = "none"
+                document.querySelector(".logouts").style.display = "none"
+                document.querySelector(".user").style.display = "none"
+                document.querySelector(".users").style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

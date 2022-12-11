@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hac fames tempor</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/Blog1.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body onload="addcart(), checkuser()">
+    <div id="cart" class="cart"></div>
+    <div id="cart-wrapper">
+        <div class="cart-wrapper">
+            <button id="cart-close" class="cart-close">
+                <i class="close fa-sharp fa-solid fa-xmark"></i>
+            </button>
+            <div class="cart-title">
+                <div class="heading">
+                    <h4 class="title">Cart</h4>
+                    <div class="cart-line"></div>
+                    <p class="cart-text">There are no products in the cart.</p>
+                </div>
+            </div>    
+            <div class="widget style-1" id="widget">
+                
+            </div>
+            <div class="footer-cart">
+                <div  class="provisional">
+                    <p class="provisional-text">
+                        <strong>Provisional:</strong>
+                    <span class="provisional-price">
+                        0&nbsp;
+                    </span> 
+                    <span class="provisional-price-d">$</span>
+                    </p>
+                </div>
+                <p  class="btn-pay-viewcart">
+                    <a href="../Html/Pay.html" class="pay-text">pay</a>
+                    <a href="../Html/Cart.html" class="viewcart-text">view cart</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-wrapper">
+                <div id="header-scrolls" class="header-scrolls">
+                    <div id="scroll" class="scroll">
+                        <div class="flex-left">
+                            <ul class="nav">
+                                <li class="menu-item-s">
+                                    <a href="../Html/Home.html" class="nav-text-a">home Page</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Introduce.html" class="nav-text-b">introduce</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Product.html" class="nav-text-c">product
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                        <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="header-inner" >
+                            <div id="sc-logo" class="sc-logo">
+                                <a href="../Html/Home.html">
+                                    <img width="50" height="50" src="..//img/header/logo.png" alt="Wn3" class="scroll-logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex-right">
+                            <ul class="navs">
+                                <li  class="menu-item-s">
+                                    <a href="../Html/Blog.html" class="nav-text-a">blog</a>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Login.html" class="nav-text-b account1" onclick="clickpay()">account
+                                        <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="subnavs">
+                                        <li class="menu-item">
+                                            <a href="../Html/User.html" class="menu-text user"></a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="" class="menu-text clickpays" onclick="clickpay()">pay</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href=" " class="menu-text logout" onclick="logout()">log out</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-s">
+                                    <a href="../Html/Contact.html" class="nav-text-c">contact</a>
+                                </li>
+                                <li id="menu-click" class="menu-item-s">
+                                    <div  class="nav-text-c">
+                                        <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                        <span class="cart-price">0</span>
+                                        <span>$</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="top-bar" class="top-bar">
+                    <div class="top-bar-header">
+                        <div class="top-bar-right">
+                            <i class="phone-icon fa-solid fa-square-phone"></i>
+                            <span class="text-top-bar">Hotline: </span>
+                            <a href="tel:(+84) 999 888 999" class="tel-top-bar">(+84) 999 888 999</a>
+                        </div>
+                        <div class="top-bar-left">
+                            <i class="icon-bar-left fa-brands fa-facebook-f"></i>
+                            <i class="icon-bar-left fa-brands fa-instagram"></i>
+                            <i class="icon-bar-left fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-bar-left fa-solid fa-square-envelope"></i></a>
+                        </div>
+                    </div>    
+                </div>
+                <div id="masthead" class="masthead">
+                    <div class="flex-left">
+                        <ul class="nav">
+                            <li class="menu-item">
+                                <a href="../Html/Home.html" class="nav-text-h">home Page</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Introduce.html" class="nav-text">introduce</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Product.html" class="nav-text-s" >product
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item"><a href="../Html/Chivas13&25.html" class="menu-text">chivas 13 & Chivas 25</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas18&xv.html" class="menu-text">chivas 18 & Chivas XV</a></li>
+                                    <li class="menu-item"><a href="Chivasultí&icon.html" class="menu-text">chivas ultis & chivas icon</a></li>
+                                    <li class="menu-item"><a href="../Html/Chivas12&mizunara.html" class="menu-text">chivas 12 & Chivas Mizunara</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header-inner">
+                        <div id="logo" class="logo">
+                            <a href="../Html/Home.html" >
+                                <img width="300" height="100" src="..//img/header/chivas-logo-png-transparent.png" alt="Wn3" class="header-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex-right">
+                        <ul class="navs">
+                            <li class="menu-item">
+                                <a href="../Html/Blog.html" class="nav-text-h" style="color: rgb(46 197 124);">blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="../Html/Login.html" class="nav-text-s account2" onclick="clickpay()">account
+                                    <i class="subnav-icon fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="subnav">
+                                    <li class="menu-item">
+                                        <a href="../Html/User.html" class="menu-text users"></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Cart.html" class="menu-text">cart</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href=" " class="menu-text clickpay" onclick="clickpay()">pay</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="../Html/Login.html" class="menu-text logouts" onclick="logout()">log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li  class="menu-item">
+                                <a href="../Html/Contact.html" class="nav-text">contact</a>
+                            </li>
+                            <li id="menu-clicks" class="menu-item">
+                                <div id="nav-text" class="nav-text">
+                                    <i class="cart-icon fa-solid fa-cart-shopping"></i> 
+                                    <span class="cart-prices">0</span> 
+                                    <span>$</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+            </div>    
+        </header>
+        <main id="main">
+            <div class="account">
+                <div class="titles">
+                    <h1 class="title-account"> 
+                        blog
+                    </h1>
+                    <div class="medium">
+                        <a href="../Html/Home.html" class="medium-link">Home</a>
+                        <span  class="divier">/</span>
+                        <a href="../Html/Blog.html" class="medium-text">Blog</>
+                        <span class="divier">/</span>
+                        <a class="medium-link">Hac fames tempor</a>
+                    </div>
+                </div>
+            </div>
+          <div class="content">
+                <div class="content1">
+                    <div class="box-x">
+                       <div class="text-header-top">
+                          <div class="text-box-x" >
+                              <h7 class="type-text-top">
+                                <a href="" class="header-top-link">Blog</a>
+                              </h7>
+                          </div>
+                          <div class="text-x">
+                            <h7 class="text-title-top">HAC FAMES TEMPOR</h7>   
+                          </div>
+                          <div class="Text-bottom-x">
+                             <div class="post-on"> Posted on 
+                                <a href="" class="hey-page">
+                                    29/12/2018
+                                </a>
+                                <h7>by</h7>
+                                <a href="" class="hey-page">GiaoDienWeb</a>
+                            </div>
+                          </div>
+                        </div>   
+                        <div class="img-text-top">
+                            <div class="img-text-one" >
+                                <img src="../img/content/blog-new-3.jpg" width="100%" height="100%" alt="couple"></img>
+                            </div>
+                            <div class="text-top-one">
+                                <p class="text-one">Alcohol is not a poison to be completely avoided, but it is necessary to "avoid" when drinking with a woman sitting next to it.</p>                                           
+                                <p>
+                                    <strong>PV</strong>
+                                    :
+                                    <em>How much alcohol do you think you should drink?</em>
+                                </p>
+                                <p>
+                                    <strong>Experts Vũ Thế Thành:</strong>
+                                    Not more or less, I am also a person… alcohol. Answering the question, how much alcohol is appropriate, I am afraid that because of "related interests", I cannot answer objectively.
+                                </p>
+                                <p>Well, let science recommend it, it will be more fair. But scientists, depending on whether people are easy or difficult, give very different numbers.</p>
+                                <p>I quote here the recommendation of scientists at the Mayo Clinic, one of the famous non-profit research and treatment facilities in the US. They recommend drinking no more than 148ml of wine, equivalent to less than half a liter of beer.</p>
+                                <p>That's the largest number of drinking recommendations I've rummaged through. I don't see them mocking men or women at all.</p>
+                            </div>
+                            <div  class="img-text-two">
+                                <img src="../img/content/blog-new-4.jpg" width="75%" height="75%" alt="alcohol"></img>
+                            </div>
+                            <div class="text-top-two">
+                                <p>
+                                    <strong>PV</strong>
+                                    :
+                                    <em>A question that goes a bit beyond science, what do you think about drinking?</em>
+                                </p>
+                                <p>
+                                    <strong>Experts Vũ Thế Thành:</strong>
+                                    First, I want to share a little bit with the "comrades" of alcohol. Alcohol is not a poison to be completely avoided, but it is necessary to "avoid" when drinking with a woman sitting next to it. The spirit of speech harms the mortal body. Innate, women remember tough, talk tough, and can end their lives if they… are tough. The headache effect is more than the acetaldehyde residue in alcohol metabolism.
+                                </p>
+                                <p>The consolation is that the first famous monk, Hai Thuong Lan Ong, said: "Selling da tam smeared wine... The doctor is not unique, that is, if you have three glasses of wine at night, you can take a break from the doctor's day." However, the size of the wine glass, I did not see him mention. The old wine glass must have been as small as a tea cup. If so, maybe even "stricter" than the scientists at the Mayo Clinic.</p>
+                                <p>Wine is, after all, just a means to deepen conversation. A glass or two of wine is enough. The ancients said: Food and drink harmonize the gentleman. The question is whether or not you can control yourself after drinking alcohol.</p>
+                            </div>
+                        <div class="check-icon">
+                           <div class="ft-icon">
+                            
+                                <i class="icon-fb fa-brands fa-facebook-f"></i>
+                                <i class="icon-twt fa-brands fa-twitter"></i>
+                                <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                                <i class="icon-prt fa-brands fa-pinterest"></i>
+                            
+                           </div>
+                        </div>
+                        <div class="comment" >
+                            <h3 class="comment-respond">
+                                Answer 
+                            </h3>
+                            <small>
+                                <a rel="nofollow" id="cancel-comment-reply-link" href="/venenatis-veulum-peus/#respond" style="display:none;">Hủy</a>
+                            </small>   
+                            <p class="must-log-in">
+                                You must be
+                                <a href="" class="text-log"> Logged </a>
+                                in to post feedback.
+                            </p>
+                        </div>
+                    </div>   
+                    </div>
+                   
+                </div>
+                <div class="content2">
+                    <div class="boxs1">
+                        <div class="menu-test">
+                            <h6 class="title-menu1"> Categories</h6>
+                        </div>
+                         <div class="underlined-one"></div>
+                        <div class="menu-bottom">
+                            <ul id="menu-test" style="list-style: none;">
+                                <li><a href="Blog.html" class="blog-menu-item"> New York </a></li>
+                                <li><a href="Blog.html" class="blog-menu-item"> London SF </a></li>
+                                <li><a href="Blog.html" class="blog-menu-item"> Cockfosters BP </a></li>
+                                <li><a href="Blog.html" class="blog-menu-item"> Los Angeles </a></li>
+                                <li><a href="Blog.html" class="blog-menu-item"> Chicago </a></li>
+                                <li><a href="Blog.html" class="blog-menu-item"> Las Vegas </a></li>
+                            </ul>
+                        </div>                
+                    </div>
+                    <div class="boxs2">
+                        <div class="frame-one">
+                           <div class="menu-test1">
+                                  <h6 class="title-menu1"> Latest news </h6>
+                           </div>
+                           <div class="underlined-two"></div>
+                        </div>
+                        <div class="fram-two">
+                            <div class="picture-small-one">
+                                <div class="picture-small-title">
+                                   <img src="../img/content/blog-new-2.jpg" width="100%" height="100%"  alt="couple"></img>
+                                </div> 
+                                <div class="text-picture">
+                                   <h7><a href="" class="text-picture-small" >Venenatis veulum peus </a></h7>
+                                </div>
+                            </div>
+                            <div class="picture-small-two">
+                                <div class="picture-small-title">
+                                    <img src="../img/content/blog-new-3.jpg" width="100%" height="100%" alt="book">
+                                </div>
+                                <div class="text-picture">
+                                    <h7><a href="" class="text-picture-small" >Hac fames tempor</a></h7>
+                                </div>
+                            </div>
+                            <div class="picture-small-three">
+                                <div class="picture-small-title">
+                                    <img src="../img/content/blog-new-1.jpg" width="100%" height="100%" alt="kid">
+                                </div>
+                                <div class="text-picture">
+                                    <h7><a href="" class="text-picture-small" >Urna ligula inceptos</a></h7>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <section class="ft-st">
+                <div class="ft">
+                    <div class="ft-logo">
+                        <div class="ft-st-logo">
+                            <img src="../img/footer/logo-wine.png" alt="" class="logo-img">
+                        </div>
+                        <div class="ft-icon">
+                            <i class="icon-fb fa-brands fa-facebook-f"></i>
+                            <i class="icon-twt fa-brands fa-twitter"></i>
+                            <a href="mailto:wn3@mail.com"><i class="icon-email fa-solid fa-square-envelope"></i></a>
+                            <i class="icon-prt fa-brands fa-pinterest"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="ft-nd">
+                <div class="ft-border">
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Our Stores</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">New York</a></li>
+                                    <li class="col-text"><a href="" class="text-link">London SF</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Cockfosters BP</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Los Angeles</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Chicago</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Las Vegas</a></li>
+                                </ul>
+                            </div>
+                        </ul>    
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Information</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">About Store</a></li>
+                                    <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Useful links</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href="" class="text-link">Privacy Policy</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Returns</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Terms & Conditions</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                    <li class="col-text"><a href=""class="text-link">Our Sitemap</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box">
+                        <ul class="menu"> 
+                            <div class="menu-wrapper">
+                                <span class="menu-title">Footer Menu</span>
+                            </div>    
+                            <div class="menu-line"></div>
+                            <div class="menu-col">
+                                <ul class="col-footer">
+                                    <li class="col-text"><a href=""class="text-link">Instagram profile</a></li>
+                                    <li class="col-text"><a href="" class="text-link">New Collection</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Woman Dress</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Contact Us</a></li>
+                                    <li class="col-text"><a href="" class="text-link">Latest News</a></li>
+                                </ul>
+                            </div>
+                        </ul> 
+                    </div>
+                    <div class="ft-box-b">
+                        <div class="menu-wrapper">
+                            <span class="wrapper-title">About The Store</span>
+                        </div>
+                        <div class="menu-lines"></div>
+                        <p>
+                            <span class="p-text">STORE - worldwide fashion store since 1978. We sell over 1000+ branded products on our web-site.</span>
+                        </p>
+                        <div class="menu-col">
+                            <ul class="col-footer">
+                                <li class="location-text"><i class="col-icon fa-solid fa-location-dot"></i><a href=""class="text-link">273 An Duong Vuong, Ward 3, District 5, Ho Chi Minh City</a></li>
+                                <li class="col-text"><i class="col-icon fa-solid fa-mobile-screen-button"></i><a href="tel:(+84) 999 888 999" class="text-link">Phone: (+84) 999 888 999 </a></li>
+                            </ul>
+                        </div>
+                        <div class="col-img">
+                            <img src="../img/footer/payments.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="ft-rd">
+                <div class="end">
+                    Copyright 2022 © Designed by
+                    <a href="" class="end-link">GoodWineShop.com</a>
+                </div>
+            </div>
+            <div title="Về đầu trang" class="top-up">
+                <i class="icon-top fa-solid fa-angle-up"></i>
+            </div>
+        </footer>
+    </div>
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script type="text/javascript" src="../js/Wn3.js"></script>
+    <script>
+        let userLogins = !!localStorage.getItem("user")
+        function clickpay() {
+            var clickpay1 = document.querySelector(".clickpay")
+            var clickpay2 = document.querySelector(".clickpays")
+            var acc1 = document.querySelector(".account1")
+            var acc2 = document.querySelector(".account2")
+            if(userLogins) {
+                clickpay1.href = "../Html/Pay.html"
+                clickpay2.href = "../Html/Pay.html"
+                acc1.href = "../Html/User.html"
+                acc2.href = "../Html/User.html"
+
+            } else {
+                clickpay1.href = "../Html/Login.html"
+                clickpay2.href = "../Html/Login.html"
+                acc1.href = "../Html/Login.html"
+                acc2.href = "../Html/Login.html"
+            }
+        }
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("user")
+        }
+        function checkuser() {
+            var checkuser = localStorage.getItem("user") ;
+            if(userLogins) {
+                document.querySelector(".logout").style.display = "block"
+                document.querySelector(".logouts").style.display = "block"
+                document.querySelector(".user").style.display = "block"
+                document.querySelector(".users").style.display = "block"
+                var cuser = document.querySelector(".user").innerText = checkuser
+                var cuser = document.querySelector(".users").innerText = checkuser
+            } else {
+                document.querySelector(".logout").style.display = "none"
+                document.querySelector(".logouts").style.display = "none"
+                document.querySelector(".user").style.display = "none"
+                document.querySelector(".users").style.display = "none"
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

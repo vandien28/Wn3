@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css" integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js" integrity="sha512-tQYZBKe34uzoeOjY9jr3MX7R/mo7n25vnqbnrkskGr4D6YOoPYSpyafUAzQVjV6xAozAqUFIEFsCO4z8mnVBXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="icon" href="../img/cropped-fav-32x32.png">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <div class="sidebar">
+                <div class="logo">
+                    <h1>wn3</h1>
+                </div>
+                <ul class="nav">
+                    <li >
+                        <a href="../Html/Admin.html" class="nav-link">
+                            <i class="fa-solid fa-gauge"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Html/Profile.html" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../Html/Management.html" class="nav-link">
+                            <i class="fa-solid fa-bars-progress"></i>
+                            <p>Management</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../Html/Statisc.html" class="nav-link">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <p>Statistics</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../Html/Map.html" class="nav-link" >
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <p>Map</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <header class="header">
+                <div class="expand">
+                    <div class="expand-left">
+                        <p>Statistics</p>
+                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-earth-americas"></i>
+                        <a><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+                    </div>
+                    <div class="expand-right">
+                        <a href=""><img src="../img/content/logouser.png" alt=""></a>
+                        <p onclick="logout()">Log out</p>
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                </div>
+            </header>
+            <main class="content-page">
+                <div class="content">
+                    <div class="row" style="padding-top: 20px;">
+                        <div class="col" style="padding-left: 0; ">
+                            <a href="#row1">
+                                <div class="card-box card-stt">
+                                    <h6>chivas 13 & chivas 25</h6>
+                                    <h3><span id="counter1">389</span>&nbsp;<span style="font-size: 14px;">products</span></h3>
+                                    <span class="badge">+11%</span>
+                                    <span class="muted">From previous period</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#row2">
+                                <div class="card-box card-stt">
+                                    <h6>chivas 18 & chivas xv</h6>
+                                    <h3><span id="counter2">300</span>&nbsp;<span style="font-size: 14px;">products</span></h3>
+                                    <span class="badge" >+5%</span>
+                                    <span class="muted">From previous period</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="#row3">
+                                <div class="card-box card-stt">
+                                    <h6>chivas ultis & chivas icon</h6>
+                                    <h3><span id="counter3">181</span>&nbsp;<span style="font-size: 14px;">products</span></h3>
+                                    <span class="badge" style="background-color: rgb(255 122 163);">0%</span>
+                                    <span class="muted">From previous period</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col" style="padding-right: 0;">
+                            <a href="#row4">
+                                <div class="card-box card-stt">
+                                    <h6>chivas 12 & chivas mizunara</h6>
+                                    <h3><span id="counter4">120</span>&nbsp;<span style="font-size: 14px;">products</span></h3>
+                                    <span class="badge" style="background-color: rgb(255 93 72);"">-7%</span>
+                                    <span class="muted">From previous period</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" id="row1" style="padding-top: 30px; justify-content: space-between;">
+                        <div class="col" style="width: 100%;">
+                            <div class="card-box">
+                                <h4>Sales Statistics Category Chivas 13 & Chivas 25</h4>
+                                <div style=" width: 100%;">
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="row2" style="padding-top: 30px; justify-content: space-between;">
+                        <div class="col" style="width: 100%;">
+                            <div class="card-box">
+                                <h4>Sales Statistics Category Chivas 18 & Chivas XV</h4>
+                                <div style=" width: 100%;">
+                                    <canvas id="myChart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="row3" style="padding-top: 30px; justify-content: space-between;">
+                        <div class="col" style="width: 100%;">
+                            <div class="card-box">
+                                <h4>Sales Statistics Category Chivas Ultis & Chivas Icon</h4>
+                                <div style=" width: 100%;">
+                                    <canvas id="myChart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="row4" style="padding: 30px 0 40px; justify-content: space-between;">
+                        <div class="col" style="width: 100%;">
+                            <div class="card-box">
+                                <h4>Sales Statistics Category Chivas 12 & Chivas Mizunara</h4>
+                                <div style=" width: 100%;">
+                                    <canvas id="myChart3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <div class="end">
+                    Copyright 2022 © Designed by
+                    <a href="" class="end-link">GoodWineShop.com</a>
+                </div>
+                <div title="Về đầu trang" class="top-up">
+                    <i class="icon-top fa-solid fa-angle-up"></i>
+                </div>
+            </footer>
+        </div>
+    </div> 
+    <script src="../font/jquery/jquery-3.6.1.js"></script>
+    <script>
+         var offset = 500;
+        var duration = 1;
+        $(function(){
+        $('.right').scroll(function () {
+            if ($(this).scrollTop() > offset) {
+                $('.top-up').fadeIn(duration);
+            }
+            else {
+                $('.top-up').fadeOut(duration);
+            }
+        });
+        $('.top-up').click(function () {
+        $('.right').animate({scrollTop: 0}, duration);
+            });
+        });
+    </script>
+    <script>
+        const chart = document.getElementById('myChart');
+        const data = {
+            labels: ['January', 'February', 'March', 'April','May','June','July','August','September','October','November','December'],
+            datasets: [{
+                label: 'Chivas 13 Rum Casks',
+                data: [4, 5, 3, 6, 4,7,7,4,4,7,6,6],
+                backgroundColor:'rgba(254,208,73,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas 25',
+                data: [3, 3, 4, 5, 3, 8, 4,3,4,3,5,4],
+                backgroundColor:'rgba(243,236,176,1)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas 13 Sherry Casks',
+                data: [3, 4, 3, 6, 4, 7, 7,5,5,7,4,5],
+                backgroundColor:'rgba(207,253,225,1)',
+                
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas 13 Bouron Casks',
+                data: [3, 5, 2, 4, 3, 4, 5,3,6,4,8,10],
+                backgroundColor:'rgba(104,185,132,0.8)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas 13 Rye Casks',
+                data: [5, 3, 4, 5, 6, 3, 6,4,6,8,5,9],
+                backgroundColor:'rgba(61,86,86,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas 13 Tequila Casks',
+                data: [4, 3, 5, 3, 3, 5, 4,6,5,3,7,8],
+                backgroundColor:'rgba(144,54,57,0.7)',
+                borderSkipped: 'middle'
+            }]
+        };
+        
+        const mixedCharts = new Chart(chart, {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    x:{
+                    stacked: true
+                    },y: {
+                    beginAtZero: true,
+                    stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        const chart1 = document.getElementById('myChart1');
+        const data1 = {
+            labels: ['January', 'February', 'March', 'April','May','June','July','August','September','October','November','December'],
+            datasets: [{
+                label: 'Chivas 18',
+                data: [4, 3, 5, 3, 3, 5, 4,6,5,3,7,8],
+                backgroundColor:'rgba(102,90,72,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas 18 Lisa Limited',
+                data: [3, 5, 2, 4, 3, 4, 5,3,6,4,8,10],
+                backgroundColor:'rgba(135,76,98,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas XV',
+                data: [3, 4, 3, 6, 4, 7, 7,5,5,7,4,5],
+                backgroundColor:'rgba(201,132,116,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas XV Balmain',
+                data: [4, 5, 3, 6, 4,7,7,4,4,7,6,6],
+                backgroundColor:'rgba(242,211,136,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas XV Balmain Gold',
+                data: [5, 3, 4, 5, 6, 3, 6,4,6,8,5,9],
+                backgroundColor:'rgba(167,210,203,0.7)',
+                borderSkipped: 'middle'
+            }]
+        };
+        
+        const mixedCharts1 = new Chart(chart1, {
+            type: 'bar',
+            data: data1,
+            options: {
+                scales: {
+                    x:{
+                    stacked: true
+                    },y: {
+                    beginAtZero: true,
+                    stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        const chart2 = document.getElementById('myChart2');
+        const data2 = {
+            labels: ['January', 'February', 'March', 'April','May','June','July','August','September','October','November','December'],
+            datasets: [{
+                label: 'Chivas Ultis',
+                data: [5, 3, 4, 5, 6, 3, 6,4,6,8,5,9],
+                backgroundColor:'rgba(218,204,150,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas Ultis XX',
+                data: [3, 5, 2, 4, 3, 4, 5,3,6,4,8,10],
+                backgroundColor:'rgba(191,139,103,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas Icon',
+                data: [3, 4, 3, 6, 4, 7, 7,5,5,7,4,5],
+                backgroundColor:'rgba(157,83,83,0.7)',
+                borderSkipped: 'middle'
+            }]
+        };
+        
+        const mixedCharts2 = new Chart(chart2, {
+            type: 'bar',
+            data: data2,
+            options: {
+                scales: {
+                    x:{
+                    stacked: true
+                    },y: {
+                    beginAtZero: true,
+                    stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        const chart3 = document.getElementById('myChart3')
+        const data3 = {
+            labels: ['January', 'February', 'March', 'April','May','June','July','August','September','October','November','December'],
+            datasets: [{
+                label: 'Chivas 12',
+                data: [4, 5, 3, 6, 4,7,7,4,4,7,6,6],
+                backgroundColor:'rgba(157,171,134,0.7)',
+                borderSkipped: 'middle'
+            },{
+                label: 'Chivas Mizunara',
+                data: [3, 5, 2, 4, 3, 4, 5,3,6,4,8,10],
+                backgroundColor:'rgba(204,115,81,0.7)',
+                borderSkipped: 'middle'
+            }]
+        };
+        
+        const mixedCharts3 = new Chart(chart3, {
+            type: 'bar',
+            data: data3,
+            options: {
+                scales: {
+                    x:{
+                    stacked: true
+                    },y: {
+                    beginAtZero: true,
+                    stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+        function logout() {
+            window.location.href = "../Html/Login.html"
+            localStorage.removeItem("admin")
+        }
+    </script>
+    <script>
+        function animateNumber(finalNumber, duration = 5000, startNumber = 0, callback) {
+            let currentNumber = startNumber
+            const interval = window.setInterval(updateNumber, 17)
+            function updateNumber() {
+                if (currentNumber >= finalNumber) {
+                clearInterval(interval)
+                } else {
+                let inc = Math.ceil(finalNumber / (duration / 17))
+                if (currentNumber + inc > finalNumber) {
+                    currentNumber = finalNumber
+                    clearInterval(interval)
+                } else {
+                    currentNumber += inc
+                }
+                callback(currentNumber)
+                }
+            }
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+            animateNumber(389, 2000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter1').innerText = formattedNumber
+            })
+            
+            animateNumber(300, 2000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter2').innerText = formattedNumber
+            })
+            
+            animateNumber(181, 2000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter3').innerText = formattedNumber
+            })
+            animateNumber(120, 2000, 0, function (number) {
+                const formattedNumber = number.toLocaleString('de-DE')
+                document.getElementById('counter4').innerText = formattedNumber
+            })
+            })
+    </script>
+</body>
+</html>
+
+
+
